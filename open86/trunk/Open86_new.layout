@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="All" />
+	<File name="Open86_Device.h" open="0" top="0" tabpos="1">
+		<Cursor position="2536" topLine="173" />
+	</File>
+	<File name="_base.h" open="0" top="0" tabpos="2">
+		<Cursor position="3662" topLine="85" />
+	</File>
+	<File name="bios.asm" open="0" top="0" tabpos="10">
+		<Cursor position="373" topLine="16" />
+	</File>
+	<File name="config.h" open="0" top="0" tabpos="7">
+		<Cursor position="217" topLine="0" />
+	</File>
+	<File name="config_files.c" open="0" top="0" tabpos="9">
+		<Cursor position="3291" topLine="185" />
+	</File>
+	<File name="cpu_bios.c" open="1" top="0" tabpos="1">
+		<Cursor position="4149" topLine="115" />
+	</File>
+	<File name="dynamic_loading.c" open="1" top="1" tabpos="2">
+		<Cursor position="12246" topLine="511" />
+	</File>
+	<File name="helpers.c" open="0" top="0" tabpos="7">
+		<Cursor position="1445" topLine="24" />
+	</File>
+	<File name="instructions\bcd.c" open="0" top="0" tabpos="0">
+		<Cursor position="89" topLine="43" />
+	</File>
+	<File name="instructions\bitwise.c" open="0" top="0" tabpos="9">
+		<Cursor position="200" topLine="329" />
+	</File>
+	<File name="instructions\ect.c" open="0" top="0" tabpos="6">
+		<Cursor position="3591" topLine="366" />
+	</File>
+	<File name="instructions\groups.c" open="0" top="0" tabpos="6">
+		<Cursor position="8302" topLine="265" />
+	</File>
+	<File name="instructions\inc_dec.c" open="0" top="0" tabpos="4">
+		<Cursor position="363" topLine="24" />
+	</File>
+	<File name="instructions\ints.c" open="0" top="0" tabpos="1">
+		<Cursor position="2598" topLine="112" />
+	</File>
+	<File name="instructions\jmp.c" open="0" top="0" tabpos="10">
+		<Cursor position="4091" topLine="214" />
+	</File>
+	<File name="instructions\load.c" open="0" top="0" tabpos="0">
+		<Cursor position="246" topLine="4" />
+	</File>
+	<File name="instructions\mov.c" open="0" top="0" tabpos="17">
+		<Cursor position="4086" topLine="261" />
+	</File>
+	<File name="instructions\mul_div.c" open="0" top="0" tabpos="5">
+		<Cursor position="1628" topLine="51" />
+	</File>
+	<File name="instructions\ports.c" open="0" top="0" tabpos="1">
+		<Cursor position="1641" topLine="0" />
+	</File>
+	<File name="instructions\push_pop.c" open="0" top="0" tabpos="3">
+		<Cursor position="1341" topLine="74" />
+	</File>
+	<File name="instructions\sub_add.c" open="0" top="0" tabpos="5">
+		<Cursor position="6128" topLine="190" />
+	</File>
+	<File name="instructions\undoc.c" open="0" top="0" tabpos="0">
+		<Cursor position="25" topLine="0" />
+	</File>
+	<File name="layer.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="4535" topLine="198" />
+	</File>
+	<File name="main.c" open="0" top="0" tabpos="3">
+		<Cursor position="2364" topLine="48" />
+	</File>
+	<File name="makefile" open="0" top="0" tabpos="16">
+		<Cursor position="1065" topLine="0" />
+	</File>
+	<File name="makefile.linux" open="0" top="0" tabpos="15">
+		<Cursor position="1531" topLine="0" />
+	</File>
+	<File name="makefile.win32" open="0" top="0" tabpos="14">
+		<Cursor position="2076" topLine="10" />
+	</File>
+	<File name="panic.c" open="0" top="0" tabpos="4">
+		<Cursor position="301" topLine="0" />
+	</File>
+	<File name="res.rc" open="0" top="0" tabpos="8">
+		<Cursor position="73" topLine="0" />
+	</File>
+	<File name="test_config.o86" open="0" top="0" tabpos="13">
+		<Cursor position="158" topLine="0" />
+	</File>
+	<File name="tester.asm" open="0" top="0" tabpos="12">
+		<Cursor position="9102" topLine="774" />
+	</File>
+</CodeBlocks_layout_file>

@@ -1,0 +1,14 @@
+#My SDL video and gui stuff
+#This is brynet's makefile that he made to work for him..
+
+#-lSDL -lSDL_ttf -o myemu
+
+_OBJS=.objs/main.o
+_CFLAGS=-g -c -I/usr/local/include
+default:
+	gcc $(_CFLAGS) main.c -o .objs/main.o
+
+	g++ -shared -W1 $(_OBJS) -L/usr/local/lib -pthread -lpthread -lSDL -o 86Gui.so
+
+clean:
+	rm $(_OBJS)

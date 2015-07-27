@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="default" />
+	<File name="addon_installs\test2_addon.php" open="1" top="0" tabpos="8">
+		<Cursor position="551" topLine="0" />
+	</File>
+	<File name="addons\admin_addon.php" open="1" top="0" tabpos="6">
+		<Cursor position="143" topLine="0" />
+	</File>
+	<File name="addons\security.php" open="0" top="0" tabpos="8">
+		<Cursor position="302" topLine="0" />
+	</File>
+	<File name="addons\test_addon.php" open="1" top="0" tabpos="7">
+		<Cursor position="77" topLine="0" />
+	</File>
+	<File name="cache\addon_tables.php" open="1" top="0" tabpos="5">
+		<Cursor position="182" topLine="0" />
+	</File>
+	<File name="config.php" open="1" top="0" tabpos="3">
+		<Cursor position="772" topLine="0" />
+	</File>
+	<File name="index.php" open="1" top="0" tabpos="1">
+		<Cursor position="3186" topLine="105" />
+	</File>
+	<File name="security.php" open="1" top="1" tabpos="2">
+		<Cursor position="2722" topLine="67" />
+	</File>
+	<File name="test_theme.php" open="1" top="0" tabpos="4">
+		<Cursor position="560" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>

@@ -1,0 +1,119 @@
+; This is a very basic example
+; of a tiny Operating System.
+
+; Directive to create BOOT file:
+   #MAKE_BOOT#
+
+; This is an OS loader only!
+;
+; It can be loaded at the first
+; sector of a floppy disk:
+;   cylinder: 0
+;   sector: 1
+;   head: 0
+;
+; The code in this file is supposed
+; to load the Kernel (micro-os_kernel.asm)
+; and to pass control over it.
+; The Kernel code should be on floppy at:
+;   cylinder: 0
+;   sector: 2
+;   head: 0
+
+; Memory table (hex):
+; -------------------------------
+; 07C0:0000 |   Boot Sector
+; 07C0:01FF |   (512 bytes)
+; -------------------------------
+; 07C0:0200 |    Stack
+; 07C0:03FF |   (255 words)
+; -------------------------------
+; 0800:0000 |    Kernel
+; 0800:1400 | 
+;           |   (currently 5 Kb,
+;           |    10 sectors are
+;           |    loaded from
+;           |    floppy)
+; -------------------------------
+
+; micro-os_loader.asm file produced by
+; this code should be less or
+; equal to 512 bytes, since this
+; is the size of the boot
+; sector!
+; Current version is compiled to
+; 101 bytes.
+
+
+include 'emu8086.inc'
+
+; Boot record is loaded at 0000:7C00
+ORG 7C00h
+
+; skip the data section:
+JMP start
+
+;==== data section =====================
+
+; welcome message:
+msg  DB 'Welcome to micro-os', 13, 10,
+     DB 'Loading...', 0
+
+;======================================
+
+start:
+
+; initialize the stack:
+MOV     AX, 07C0h
+MOV     SS, AX
+MOV     SP, 03FEh ; top of the stack.
+
+
+; set Data Segment:
+PUSH    CS
+POP     DS
+
+; set default video mode 80x25:
+MOV     AH, 00h
+MOV     AL, 03h
+INT     10h
+
+; print welcome message:
+LEA     SI, msg
+CALL    print_string
+
+;===================================
+; load the Kernel at 0800h:0000h
+; 10 sectors starting at:
+;   cylinder: 0
+;   sector: 2
+;   head: 0
+
+; BIOS passes drive number in DL,
+; so it's not changed:
+
+MOV     AH, 02h ; read function.
+MOV     AL, 10  ; sectors to read.
+MOV     CH, 0   ; cylinder.
+MOV     CL, 2   ; sector.
+MOV     DH, 0   ; head.
+; DL not changed! - drive number.
+
+; ES:BX points to receiving
+;  data buffer:
+MOV     BX, 0800h   
+MOV     ES, BX
+MOV     BX, 0
+
+; read!
+INT     13h
+;===================================
+
+; pass control to Kernel:
+JMP     0800h:0000h
+
+;===========================================
+
+DEFINE_PRINT_STRING
+
+END

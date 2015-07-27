@@ -1,0 +1,14 @@
+#My SDL video and gui stuff
+
+#-lSDL -lSDL_ttf -o myemu
+
+_OBJS=.objs/main.o .objs/font.o
+_CFLAGS=-g -IC:/mingw/include -IC:\MinGW\lib\gcc\mingw32\3.4.5\include -c
+default:
+	gcc $(_CFLAGS) main.c -o .objs/main.o
+	gcc $(_CFLAGS) font.c -o .objs/font.o
+
+	g++ -shared -W1 $(_OBJS) -lSDL -o VideoCard.dll
+
+clean:
+	rm $(_OBJS)

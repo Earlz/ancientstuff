@@ -1,0 +1,39 @@
+blah..
+directories will be like "sub-index's" with a directories data being a sub-index
+
+files will be just a starting cluster and size and in clusters the last 4 bytes being the next cluster
+
+attributes:
+1. read-only
+2. private //not truelly encrypted but only protected at OS level
+3. locked //data in a file or directory is not movable, so should not be moved in defrag
+4. system //only for system stuff
+5. hidden //should not be directly shown
+6. compressed //compressed //might be dropped
+7. ready for archiving 
+8. encrypted //encrypted with user software or whatever
+
+
+It will use a bitmap system for which sectors are free
+
+To have a kindof backwards compatability I will have it so that there are 2 extra things in the first block(boot sector) which are "extra bytes in data sectors" and "extra bytes in index sectors" which would allow for future versions to add features but this bytes being ignorable so that it is "foward compatible"  or like if you support v1.0 then you can read v2.0 but it won't have extra features
+
+utf-8 will probably be used for name format however a name size limit will be made probably
+
+
+all of this here is very subject to change...
+Superblock or whatever:
+info		size
+jump code	11 bytes
+all the fat stuff	something bytes
+boot sector		something
+EzFS info
+
+
+
+
+
+
+
+
+

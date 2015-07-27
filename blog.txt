@@ -1,0 +1,523 @@
+:.:<font size=5><u>Me! w00t!</u></font>:.:
+Ok, so I have overcome my fear of the intartubes and I am posting a picture of me...
+
+<img src="me.jpg" alt="I eat waffles through loud guitar amps">
+<font size=1>[Sun, 23 Dec 2007 11:16:50 -0600]</font>
+
+<hr>
+:.:<font size=5><u>w00t</u></font>:.:
+Yay...I can update my blog from school...yea, get past school blocks and be a pimp...
+
+w00t/.. I'm a kitty cat! well, not really...
+<font size=1>[Tue, 18 Dec 2007 13:04:46 -0600]</font>
+
+<hr>
+:.:<font size=5><u>Segregation</u></font>:.:
+Girl is the new white
+Boy is the new black
+<font size=1>[Mon, 10 Dec 2007 08:05:48 -0600]</font>
+
+<hr>
+:.:<font size=5><u>Why not?</u></font>:.:
+Freedom to express what we all have at one point or another needed to do...
+
+I am not alone in my struggle, you bear it with me, and whenever I look over my shoulder, you become visible, and eventually, even to my naked eye... You are not alone in this, I will always be there, even whenever your moon hides behind the clouds, and the sun is long set, I will be there... I know you are watching, and I am aware.
+
+The world can be against me, but if you are by my side, bracing and supporting me, I know that it is all ok...
+
+I love you Hannah...more than you will ever know...
+<font size=1>[Fri, 30 Nov 2007 20:52:15 -0600]</font>
+
+<hr>
+:.:<font size=5><u>meh...</u></font>:.:
+I really do not like this website anymore :( ... just thought I'd put that out there... I think I'm going to strip it down sometime...
+<font size=1>[Tue, 20 Nov 2007 22:28:04 -0600]</font>
+
+<hr>
+:.:<font size=5><u>OS development...</u></font>:.:
+Ok, I'm quite bored, so what to do? Stir up a hobby I haven't done in a long itme!
+
+Ok, so I got GRUB and linker scripts working...so...
+
+also, the linking actually works properly, so I shouldn't have mysterious problems like with JouleOS...
+<font size=1>[Thu, 18 Oct 2007 23:05:52 -0500]</font>
+
+<hr>
+:.:<font size=5><u>C++ needs to die...</u></font>:.:
+ok, why the frikkin can I not declare an array of fcking references. And why the fcuk must you explicitly cast an int to volatile, in order to put it in a volatile array....it makes no fcking sense! I don't need a frikkin compiler telling me wha tI can and can't do...I just want ot be able to do it, I know what I'm doing....ARGHH....
+
+/me reconsiders his decision on using C++ for this project
+<font size=1>[Wed, 17 Oct 2007 14:07:49 -0500]</font>
+
+<hr>
+:.:<font size=5><u>x86Lib</u></font>:.:
+Ok, I'm totally bored of TI-BASIC, PHP, and drawing, I think I will make a project called x86Lib.
+
+Basically, what this will be is a x86 emulation library. This will only emulate the actual CPU, which means, I have a lot less to worry about. It is intended to be used so that people wanting to make their own emulators can, and so they can skip the CPU emulation bit and just worry about things that "actually" have to be designed.
+
+Right now, the thing halting development is internal conflicts with myself at either to use C or C++ and also exactly how much code I should borrow from Open86.
+
+...
+<font size=1>[Tue, 16 Oct 2007 09:59:27 -0500]</font>
+
+<hr>
+:.:<font size=5><u>/</u></font>:.:
+[/depressing moment]
+<font size=1>[Tue, 16 Oct 2007 09:50:47 -0500]</font>
+
+<hr>
+:.:<font size=5><u>...</u></font>:.:
+[Edited...]
+<!--Ok, so there I was... my clock said 2:00 but I knew it had to be later. Time seems to stand still, and yet I know that everything seemed to happen in the blink of an eye. In just a few syllables, I was completely awe-strucken, voiceless, and left standing alone.
+
+I went off, to think, and oh such a nice night it was to do such. I went behind the cloak of a light and sat down. The strangest part being, that my mind was completely void of all thought, I felt like I had finally figured out everything, though I know I hadn't. I just sat, glaring over the football field at the forest I couldn't see. I knew it was there however, I had seen it many times before, and could here the calming wind, blowing through the limbs. It was so nice, I wish you would've been there, you probably would've liked it. But I am not too sure on everything, at least, not now. It seemed that it had to be the most perfect night I had ever been outside on. I felt so contradicted and wished there had been something less. 
+
+It was at that point that I tore up the old square, rusted and corroded by my rough wallet that I hold so close, in my pocket.  My mind empty, just like those of the dead. I seem to be OK now, or at least I hope. I then walked out of the shadows, and into what I thought was light. It was warm inside, and my friends were ever so uninviting. I felt no need to be with them... Two came over to comfort me, give me a hug, make me feel hope. It wasn't till after I left that I thought I would be ok. Just a small talk with a really good friend... a friend I never would've thought I had...
+
+"I can finally see things from the outside, and, I will sit here, with no place in mind" --Underoath lyric...
+-->
+<font size=1>[Mon, 15 Oct 2007 15:56:01 -0500]</font>
+
+<hr>
+:.:<font size=5><u>Out Of Boredom..</u></font>:.:
+Ok, I basically am bored so I have begun a weird project on my TI-84 calculator...
+I am making an emulator type thing in TI-BASIC...yea...I want to be able to program it while in school(and bored) so I will use that..
+basically, it is an emulator of a weird instruction set called SVIS(Small Virtual Instruction Set)
+
+Eventually, it will be able to use up to 4kb of memory(and possibly virtual memory of some sort) 
+
+it has a special stack page that can not be accessed directly. It can store up to 128 values. Also, the stack pointer register is special, and can not be operated on directly.
+
+There are 8 registers, named r0-r7 and there are pages of memory named S0 through S4 or S8(undecided) each page is a list of 256 values, There are 2 segment registers named CS and DS. These refer to which page. for S0, use the value 0 in the segment. and for S1 use 1. All pages are archived unless they are the current segment in CS or DS. 
+
+Conditionals are used in a weird way. There is only one "flag" register and it is named True/False Flag. This is set by special instructions like IGT(Is Greater Than) IE(Is Equal) ILT(Is Less Than) and other such things...and then there is just a JIT(Jump If True) and JIF(Jump If False)
+
+The very weird part of this is bytes and such do not matter, as the way the lists of the TI works, they aren't restricted to anything(which actually includes imaginary numbers) and floating point and all sorts of such things...this can cause problems, but can be pretty cool too though as anything can have floats and such in it...
+
+Actually, testing this project is a lot harder to do than actually making it...
+<font size=1>[Thu, 11 Oct 2007 11:40:39 -0500]</font>
+
+<hr>
+:.:<font size=5><u>bah</u></font>:.:
+yea...I'm too lazy to type, so here is a friend!
+
+Hola peoples of the entar webz. This is the friend of Earlz, Jason. I am just like a trainded monkey updating a site for him. poop now my brain is dead.
+<font size=1>[Tue, 09 Oct 2007 13:05:15 -0500]</font>
+
+<hr>
+:.:<font size=5><u>My Dreams</u></font>:.:
+Ok, jsut woke up so I'm typing my dreams...
+
+1. Ok, I was walking through the shcool hallway coming from some class, and then I went to Hannah's locker(or beside it, as I usually do) but she wasn't there, then I just leaned against the wall. Shortly after, I just fell down and kind of like passed out...[also, I remember a lot of people in the halls] then Ashley(i think) spanked me or something and I got up and there was hardly anyone in the halls...and I randomly said "what are you people gathering here for" even though I was alone...
+
+Also, I didn't jsut get up out of hte floor, I had to climb up using the wall... it was a little scary... So then, I started walking down the hall again(in teh same direction) and I saw three of my friends, Joe, Tim, and Matt. Well, Joe decided to be evil and throw a pen at me. Then, they all started cracking up laughing, and they stepped into a room to tell everyone of what is so funny. At this point, I was quite angry, so I punched Joe in the back of the head and walked away... Joe looked back at me with his "revenge look" but I just waliked into the Auditorium...
+
+The auditorium was VERY dark... we randomly were watching a movie(with a screen and everything) so I went looking  down the rows of chairs for Hannah but I couldn't see anythign, it was so dark... I remember I fell somehow(passing out kind of again) and I just saw this weird spotlight thing sitting in one of the rows of chairs and I just rubbed my eyes because of how bright it was... at this point, I was kinda sitting up on the floor, so then I kinda crawled to the nearest seat, which was the middle section, front row(but on the edge)
+
+Then, Hannah kinda held my hand... I was just sitting kidna watching and wandering what movie this was(for only a few seconds) and I catch movement out of the corner of my eye...
+
+I see Joe and Matt sneaking slowly up to where I am sitting... presumably to get revenge... So I just stand up and then Matt says "you wanna go" or something like that... then Joe just sits down. Matt then starts attempting to kick me in the nuts, but I somehow catch his legs with my thighs or knees. he tries this again, and I somehow do a backflip and flip him over me, into random boxes and junk. It is now that the lights come back on, and the movie screen disappears. Now I goto Joe and go off on something like "you are always messing with me, why don't you just frikkin quit" (or soemthign like that) and then matt tries to punch me or something and I flip him again, but this time, he goes up on the stage or something...and appearantly he goes through the stage so he's now under the stage, and rather than the front of the stage being a wall, it is now a small paper curtain.
+
+Jared(spaz) then starts to crawl out of these curtains(with a huge smile on his face that is almost creepy) and I put my feet on his sholders and back against a chair to hold him back... Then, Matt somehow comes through Jared's shirt.. yea, and then I stand up and is like "ok, I quit, you wanna call a truce?" and then I shake Matt's hand and Joe's hand... (in all this fightign I was a bit afraid they were going to do somethign to Hannah) Ok, so now Hannah goes to a backstage hallway thing to get on stage and I go back with her, catch her, and just give her a hug, then, she looks on stage and Jared is there somewhere, doing something...
+
+Then, we both walk out of there... we go walking through the corridors of chairs, holding hands, and when we are almost at the end(near the exit), I say to her "yea, my friends are assholes" then I look back to where they are, adn Taylor is staring at me(it's a long way away) like he somehow heard me...and thats about it...
+<font size=1>[Sun, 07 Oct 2007 09:47:41 -0500]</font>
+
+<hr>
+:.:<font size=5><u>rhymes?</u></font>:.:
+Is it actually possible to rhyme?
+
+hmmm...
+
+he stood forever, beside his bed
+crying forever; it's over his head
+it makes no sense, the threads of threads
+and forks of forks. An attack?
+No, only a overflow... of the stack...
+breakpoints and tracing?
+debugging was never so facing...
+an awkward situation of an ex
+and those of the invalid .text...
+
+wow...I amaze myself sometimes...
+<font size=1>[Sat, 06 Oct 2007 17:08:42 -0500]</font>
+
+<hr>
+:.:<font size=5><u>random...</u></font>:.:
+Ok, here is bah....
+<img src="evil.png">
+
+Yea...that is what my actual handwriting on paper looks like(I did it on a smart board)
+<font size=1>[Wed, 03 Oct 2007 13:08:52 -0500]</font>
+
+<hr>
+:.:<font size=5><u><TAGGAGE></u></font>:.:
+
+<font size=1>[Sun, 23 Sep 2007 16:22:42 -0500]</font>
+
+<hr>
+:.:<font size=5><u>The Man-Purse Project</u></font>:.:
+Ok, at my school, we have these rules that should work good(as in, they have a bit of a point). This rule is "Only clear or mesh backpacks are allowed in school"
+
+Well, this *should* be a pretty fair rule. After all, with school shootings and such...
+
+I draw the line with 2 things....here is the story...
+
+My friends had a thing they had to do after school, so one friend brought his usual non-clear bag. And my other friend brought his huge sports-but-not-really bag because he had a change of clothes in it. Well, just walking past Mrs. Satan(typing teacher that thinks she owns the school) she starts going off about how the school needs to do somethign about the non-clear backpacks. So, that day in the noon announcements, the principal made an announcement that non-clear backpacks will not be allowed to come into the building after next Wednesday. My friends are out raged! And for good reason...
+
+So the next day, one of my friends comes to school with one of those huge purses like most girls carry(useful for texting and whatnot...) It is big enough for him to put 2 books and a notebook in, to put it into perspective. No teacher dares to say anything to him, most likely knowing the wrongs. (lol, I told him if a teacher says anything to him, to just draw a rainbow and put PRIDE under it)
+
+Mrs. Satan still reaps revenge however. My friend is trying to get class president. So, he made a sweet poster with a 300(the movie) quote, and at the end saying "Give your last breath to vote for [...]" and she of course thought this was inappropriate. So, he had to take it down...
+
+The last part happened Friday, so I am very curious to see how this is going to go Monday...
+
+
+I said that there were 2 unfair points. Well, the first is purses, and the second is sports bags(like actually "assigned" sports bags..) 
+<font size=1>[Sun, 09 Sep 2007 17:11:16 -0500]</font>
+
+<hr>
+:.:<font size=5><u>An Attempt...</u></font>:.:
+ok.... bored, and slightly waiting, so what else to do? Write an article!?
+well, you people will get to see the rare pre-article stage! (and in a different mood than I'm in when writing most articles, it should produce something interesting!)
+
+So I was sensually browsing my local super market, and noticed something. The supplies at said supermarket were non-existent! In fact, the employees were just sitting around, smoking and attempting to explain quantum theory to passing street merchants. A complete waste of what little time on which to use said time.  
+
+So, there I was, pondering on all of this and wandering where these guys *actually* work. Then, I noticed why. It was purely a sign that I should create my own supermarket! Is that in context? Well, it is now, due to fast context switching based on self-implemented timer algorithms. I believe I've said enough...
+
+First things first for developing my very own supermarket. First, I needed to come up with a pimp-shizzle name. I stood in my lonesome(but not empty) hallway for an hour or two. After this, I went for a stroll in the local park. I went looking. Looking for what you ask? Well, looking for a name PLING PANG(!) So I strolled and strolled and strolled till I became tired of strolling. Then, a random person(well, she is random, and she is a person[hey! just like me!]) gave me the idea; The idea of the name. The idea of naming such a name, would of course be nameless!...ly..
+
+So with assistance I came up with the name of Super Market Deluxe Supreme, a delightfully askew name! So, after coming up with the name, I went to the nearest Bank-R-You and got a low-low-low rate. I knew I got a good deal at the bank because there was a helium filled primate nearby. How many moneys did I get? Well, the moneys were not the traditional moneys you get from your local convenience store, but rather of the type of bacon. In fact, they paid me in bacon. Tylenol bacon to be exact.
+
+What now? I have bacon and a name. Oh! I need to make a spot for my store. So, I went for another stroll but this time, in the remote park. And I saw something. What is this something? Love. Yes, I saw love. Is this a so-called "unspeakable" word? Well, social-rules suck. So, I found my location next to this thing I found. I marked my location with an X and made an obscure map on how to get to it. I then put this map in a bottle and buried it in a sand castle. It was cool though, I was wearing my special shoes. --Note to self: never watch Adult-Swim after 11:15...it's just weird(*changes channels*)--  Ok, so after burying the map, I went to my apartment to pickup some screws and nails and double-sided tape. I then went to the lumber store to pickup some Dr. Pepper. I'd say I was set now.
+
+So after about 4.23 days, I was open for business.
+
+Then, I got bored, so I went to sleep...as in, what I am going to do right....now....
+
+I did have some more creative ideas for that pre-article, so maybe I'll add on to it...
+
+./::;sleep;::\.
+<font size=1>[Fri, 07 Sep 2007 23:31:51 -0500]</font>
+
+<hr>
+:.:<font size=5><u>A decrease of activity...</u></font>:.:
+Yea...
+having a girlfriend(yay!) is great for most everything but this website...(as in, it probably won't be updated as often...)
+<font size=1>[Fri, 07 Sep 2007 22:42:16 -0500]</font>
+
+<hr>
+:.:<font size=5><u>Tech support sucks</u></font>:.:
+Ok, so I tried getting some tech support for customizing a flash template(which is commercial) and this idiot is what I get..
+
+also, I went back about 2 hours later with basically the same question, and got the same guy with the exact same first response...
+
+so here it is..
+
+Connecting. Please wait.
+Please send your inquiry and give it several minutes for the operator to respond.
+21:03:55 <Earlz> I am having a problem getting the plans menu to work so that when you click on them. This is in flash, and the ID is 13573
+21:04:26 <Norman> Could You please be a little more specific?
+21:06:40 <Earlz> for the red plan buttons, I am trying to make it so you can click on them, and it will take you to the appropriate page. I tried using a simple on(release) type thing on the buttons actionscript(it had none to begin with) but when I add that, it makes it so that the animation doesn't happen when you roll your mouse over it.  
+21:07:31 <Norman> One minute please
+21:11:24 <Norman> All the menu buttons in your flash header already contain the script needed for redirecting them to the corresponding .html pages. To see how they work you will be able only after publishing your flash movie  
+21:11:25 <Norman> (see tutorial: http://info.template-help.com/after_sale_support/Working_with_Flash/Basic/article25.html) 
+21:11:25 <Norman> and uploading your customized template to your web server 
+21:11:25 <Norman> (see http://info.template-help.com/after_sale_support/Uploading_files_to_a_server/article8.html) 
+21:15:30 <Earlz> no...I put it on my server now, and the buttons show up as buttons(the mouse cursor changes) but when I click, they don't do anything  
+21:16:12 <Norman> Please give me the link to your site installed
+21:16:56 <Earlz> hang on....  
+21:20:28 <Earlz> http://earlz.biz.tm/header_flash7.swf   the top button(basic plan) is the unmodified button, while the other two are where I added the on(release) code  
+21:24:36 <Norman> You have not even uploaded the html pages
+21:25:10 <Earlz> yes, I know, but why would that matter for what I am trying to do?  
+21:26:14 <Norman> Why have you enlarged the header?
+21:27:02 <Earlz>  it isn't enlarged, most browsers zoom in on the flash files so that it uses all screen space  (or at least firefox does) 
+21:28:00 <Earlz> (they only do that when it is not embedded into an html page)  
+21:28:14 <Norman>  After publishing your .swf movie you are supposed to copy the .swf movie and paste it to the folder 'site_flash\flash' to replace the original file there. To see your site on the web you should upload all the content of folder 'site_flash'(not the folder itself, but only the files and the folders it contains) to the public folder on your FTP account.
+21:30:51 <Earlz> this is temporary, I am working on this for a friend and do not have access to his server, so I put it on mine. My problem doesn't have anything to do with the it not being in a special folder, and external files not being there...  
+21:32:34 <Norman> If you want to see the html pages ;loading correctly, you should upload all the necessary files for that (see the instruction above) 
+21:33:58 <Earlz> ok, I know that when I click the top navigation links, it produces a 404 error, but when I click on the plan buttons, absolutely nothign happens, it doesn't try to load any page, it just does nothing...now how do I fix that?  
+21:36:09 <Norman> You will be getting the error constantly the way you uploaded the part of the template to the server
+21:38:27 <Earlz> ok....you clearly are not qualified to help me. If you are new, please ask your supervisor to train you more or something. if you are not new, then you should be fired, or talked to or something.... I know I get the frikkin error but I want to be able to get that error rather than nothing happen.....I'll try this again and maybe I'll get someone who knows what hte crap they are doing...
+<font size=1>[Sat, 25 Aug 2007 23:11:46 -0500]</font>
+
+<hr>
+:.:<font size=5><u>...</u></font>:.:
+JK JK JK JK LOLOLOLOL I love your ... makeup omg I love you hair....
+
+<font size=1>[Thu, 23 Aug 2007 16:45:23 -0500]</font>
+
+<hr>
+:.:<font size=5><u>Dream Typing</u></font>:.:
+I finally dream typed!! yay!
+For those of you who don't know, dream typing is where you lay down with a keyboard, adn keep your fingers typing, and then when you dream, you type it down...
+it really is amazing, and a bit scary...
+
+but here is my text fuke I typed to(over about 45 minutes time)
+
+Ok, this is my attempt at dream typing....
+
+ok O tjiml o ok I think I am dream typing maybe so...well, I', actia;;u mpt sp i,,/// uea/// O wpmder of o a, s;e[[t empijk.... wjp lmpws//// o a, lomda jimgrrru thoooouhj.. sk i kinda want to go get something to eat or something... i dunno...im drifint goff rihjt mpw i think... so... i think i mihj  adirft off sometime	  ok o kist lomad rearramged ,h sself ...so... yea now typing is easy mostly but i wonder if i am sleepy enough  who knows i just know i am too tired to push the shift key so i am retty tired so umm yea i tihink i might bw getting sleepy who knows i dunoo what i have been tyoing really anyway thoughm i dunno i my mind is a bti blurred riht now so i am not thinking all too well, but i can atleast try i really wish i had  a pillow yeal.. ok i am back on this thing here if i can just keep things moving then may i can dream tyoe vytb reakky who knows                   jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjklkjfdsasdfjkl;lkjkjfdsa ol a, i asleep et i dont think i wil use any hard to reach keys it is just tuoid but yea i am dozing u n and out a bit but thats good soi hope i can do this thing or i will look stupod in the morning and all that...but the u gyess thats ij but ummm yea u seruiusky an bit syew qhat u ttked  i  think it was something about how  i dunno but it was kinda scare si whi jbiws reakkyuea i reallu am quite tired right now so maybe i should just ecetremely slew down  whcihc i think i kinda have wow just forgot what i was typing there too so i really think this  is working, but they are not very long i can onl hope that this is all readable, but it really is weird so who knows, i think ou have to type slower, but i dunno what i just said..... ok..one more and i am going to read  all of this and have some random fun but yea for whatever reason my heart i s pounding so here goes  rather slow attempt to make something dream like and it so far is doing nothing for me but i dunno what i just tyoed but i will wait a few more seconds befire the one people dunno what i just typed ok so lets try this like super slow for a few secinfd ok now then i dunno at all what i am tyoing i just remembeeeeer i has ti gsine vthing  i dunno what that was so umm rea i am very tired but i cant stay down here forever so i dunni what i am going to dok i almost stopped.... one more and i am done and am going to read it so i better enjoy it sohere is my attempt at it and i think it is beginning ti eitjeotk ftuh stticks dunno what i just typed... ok this seriously is addicting it is so weird that it alkost makes tou do it nit  in a weiird so
+
+
+ok so i am trying it again so here it is and i am trying to dream and such but i really want to or something so um yea i reakky dibt w wamt to or something dunno what i ju aaid ans on top of that i there is some bug down here so now will try to type slower so yea was that mother because that what went through my mind, monthermonday was what went through my mind, ok, now to slowww downnn ea like this kinda but more weird and umm yea dunno what i just said or riht there either but it is very late, but i had to to do this experiment so i am trying at it but time gies reallu slowso it is a bit confusing. but i wish i had a spare keunoartf or something i really do not remember dunno what that is s i guess i could dunno what i am saying  dunno is like the search ending thing i can't believe this dream tyoing stuff or something ok i why cant permissions or something like that  my hands keep on stopping moving when i start to dream and it is annouing snf sll og th that so ummmm yrs this is res ehos judy grll hstfvotr sdlrrp ot domrthing like stopped typing and all... i think i might actually be too tired for this but i will keep trying due to boredom and those type thingds so ummm yea i am still quite hungry though and i am sleepy too so what woul di gain from it dunno what that was i am guessing a dream but who knows really and since i am trying this it really is quite fun and it is sweet but dunno what i just tyoed di  i dont think it matters but i guess they can judge if they want dunno i am very tired so many dream things but whatever i wonder if that stupod pad is full yet you see my monitor is off this made me suer tired so ummm yea,,
+
+
+
+pl 3rd atte,[t pr sp,etjomg ot os rea;;u weord wjem ypi read ot  a and ok i am going to type random dream stuff now so yea it owns inthe fac and such so yea so many typos ans such it is going to be so hard to read and everything but i really wish that i could stau in a dream typing but i think it is impossible to do so so ,ucj for that idea and all of that yea so wonder when i will start dreaming and such ir what was that i just tyoed  who  lmpws so ummm yea i guess i am a good dream typer sor something because i don't delete  anything and all that kinda crap and of course i am self taught so yea now what to do i guess i can just dream dunno what i said there but any way i guess we can all jhabe something dunno anyway though i just found an earier way fir tghus g j key or whatever so yea take that and now lets go slowwww slowww and a, i asleep yet or what ir is this what dunnno what i just tyoed so ummm yea ol slow  ness once more and then i should get in bed or something like that but anyway i guess i really am about done dunno what i just typed but anyway this is the last time because of how sleepu i am and all it i am so sleepu but cant stay in a fream so who knows if i am sleepu dunno what i just typed  ok once more it gives me adrenaline  or something, who knows,,, hope i dont forget this in the orning tough so one more time and i wonder what this will be becaise i will suffix it if i fall asleep so umm yea ok now i want to dream some i am waiting for it and all of that good stuff so give me a dream or something please from somewhere so ummm yea i am still very hungry so i want some food really bsfluy dunno...
+<font size=1>[Sun, 12 Aug 2007 09:59:35 -0500]</font>
+
+<hr>
+:.:<font size=5><u>OpenBSD</u></font>:.:
+This is my review of OpenBSD from the beginners point of view..
+
+, well, I'm almost sure no one would think it is good for a beginner, but I got BSD installed onto a virtual PC (I will do this for any OS now, to see if I like it first..)
+
+I got it isntalled with the help of a tutorial and got X working with the help of a friend..
+
+So, I am now trying out Blackbox, it is very minimalistic, but has great workspace control and is completely customizable... I really like it...
+
+already got Firefox on it also...
+
+I really love the package manager...it settles any dependencies by itself...In Windows, you just have to install a few dependent things(manually), and hope that your not missing anything..
+
+but yea...I didn't liek the BSD disklabelling part though...the calculating cylinder crap by hand is just stupid...they really should improve to make that part a bit simpler...or at elast to where you don't have to have a calculator sitting by..
+<font size=1>[Sun, 29 Jul 2007 00:32:34 -0500]</font>
+
+<hr>
+:.:<font size=5><u>Microsoft has support for Firefox!!</u></font>:.:
+Ok, so I was trying to download IE7 to a thumbdrive(to repair a PC) and then it said I had to validate, so I ran the little validation download thing, and then I noticed something. The instructions(which had pictures) were for FIREFOX!! I almost fell out of my chair! I figured that it'd just say "you must use internet explorer to access this page" or something to that extent, but no...and the pictures were screenshots of firefox and step-by-step type thing...I just couldn't believe it...now to try to see if I can get updates through firefox!! 
+<font size=1>[Fri, 27 Jul 2007 14:44:57 -0500]</font>
+
+<hr>
+:.:<font size=5><u>Why Mcaffee and Norton suck</u></font>:.:
+Ok, so of course, you get what you pay for, so something high-priced like Norton AV or McAffee should be really great?
+
+No, they both suck. McAffee has yet to detect a virus it could fix. Also, McAffee 's designers thought of the genius idea of starting about 10 services and 4 applications at startup. Brilliant right? well, no, it's not...also, there is no consistent naming, half of the services say there organization is McAffee, then some of them say (unverified) McAffee, and some just say unknown but have a McAffee prefix in the service name.
+
+Ok, now...Norton of course... Ok, so they have a bit of separation anxiety. If you decide you no longer wish to use them, there uninstaller conveniently fails. This happens so much that there is an unofficial Norton-Removal-Tool. But even it will sometimes fail, and in that case, you go through registry with F3 and del
+
+So what is a good Antivirus then? Well, it's not internet security suite 289 for sure...the onyl good AV is AVG, yea, and what do ya know, it's free too!
+
+Windows Firewall sucks btw
+
+and for spyware, use Spybot SD, and/or Adaware (2004 preferably, a lot of features were cut in 2007's free version)
+<font size=1>[Wed, 25 Jul 2007 12:45:55 -0500]</font>
+
+<hr>
+:.:<font size=5><u>An idea...</u></font>:.:
+A complete web-based management suite, but only using PHP....And making this public...
+
+This would be useful for those who can only make 1 database or none, and want an easy to use method for managing pages and such...
+
+I would also like to make it easily extensible...
+
+current ideas is, 
+1. password protected with brute-force protection
+2. file management(editing, renaming, deleting...)
+3. Able to add functions to it to make things like adding pages, editing them, ect... easier to do...
+
+
+hmmm..who knows...
+<font size=1>[Sat, 14 Jul 2007 12:16:06 -0500]</font>
+
+<hr>
+:.:<font size=5><u>Music!? In my house!?</u></font>:.:
+here is some crappy quality music I just made...(only stupid sound recorder works on this new Vista, so..)
+<a href="http://earlz.biz.tm/seduction_mine.wma"> (The Seduction by He Is Legend...edited so that it only has the parts I know/want to play)</a> (might want to turn down your speakers, some grinding at the first, and I can't edit it out due to lack of software)
+<a href="http://earlz.biz.tm/hypno_mine.wma"> (Hypnotized by System Of A Down, only the intro)</a>
+
+sorry for wma format also...again, stupid sound recorder...
+
+man...I guess WMA does suck for quality..it sounds pretty good from line-in, but totally sucks once recorded...
+<font size=1>[Tue, 10 Jul 2007 00:00:06 -0500]</font>
+
+<hr>
+:.:<font size=5><u>What needs to be done</u></font>:.:
+Ok, just a list of some things I really want to add to this site...
+
+1. Easier page creation -- right now it takes me about 10 minutes to create a new page, and I have to do it basically by hand with the exception of my template, I want to get something so that I can type in the attributes of my pages and create them..Also, a page management system would be nice
+2. Better site layout/design
+3. Brute force prevention(for the edit pages script)
+4. Upload your own comics thingy, this would take a lot of support though, including user control, database, cookies, ect.
+5. Polls - yea..I know..
+6. Ratings -basically same as above for support
+7. Waffles..this is a blog after all!
+<font size=1>[Mon, 09 Jul 2007 10:50:04 -0500]</font>
+
+<hr>
+:.:<font size=5><u>Signature</u></font>:.:
+Don't worry..I'm authentic!
+<img src="signature.png">
+<font size=1>[Sat, 07 Jul 2007 01:38:50 -0500]</font>
+
+<hr>
+:.:<font size=5><u>Another idea</u></font>:.:
+I have another idea that would be very practical for me...
+
+I make a diagnostic OS...it will make sure hardware works properly before really using it(preventing just a random crash and wondering why)
+
+like in the boot sector, the first MB of memory will be scanned to make sure it works properly, and if not, then it will attempt to display an error message(and possibly a beep)
+
+and then in the actual OS, have a shell, and you can choose tests to run...also(unlike most any BIOS diagnostic I've seen..) it will test video memory and if it fails, then it will beep....
+
+yea...I want to make that...
+<font size=1>[Mon, 02 Jul 2007 14:45:08 -0500]</font>
+
+<hr>
+:.:<font size=5><u>Boredom?</u></font>:.:
+Ok..I'm really having an itch to design my own computer. Like design the CPU, how devices communicate ect...I'd never make it in real life, but I could make an emulator for it....who knows...
+<font size=1>[Mon, 02 Jul 2007 10:45:26 -0500]</font>
+
+<hr>
+:.:<font size=5><u>An Idea</u></font>:.:
+I have an idea of making a C++ class library for easy to use network protocol stuff...
+This would be useful for say...you were going to make your own FTP browser(or even server) then you could do something like
+my_con=new FTP_Connection("ftp://ftp.blah.com",21);
+string first=my_con->GetFirstFileName();
+char *content=my_con->GetFile(first);
+
+
+...meh...something like that anyway...and have it work for HTTP and any other protocol I feel like implementing...
+
+meh...just thought of it, so got to make sure it's a good idea though...
+<font size=1>[Mon, 25 Jun 2007 13:15:29 -0500]</font>
+
+<hr>
+:.:<font size=5><u>Showing</u></font>:.:
+kk...
+yea
+<font size=1>[Fri, 22 Jun 2007 19:37:40 -0500]</font>
+
+<hr>
+:.:<font size=5><u>...</u></font>:.:
+Yea..no development either for this 2 weeks...
+meh..
+<font size=1>[Tue, 19 Jun 2007 17:05:52 -0500]</font>
+
+<hr>
+:.:<font size=5><u>Later..</u></font>:.:
+Sorry, no more updates for a while...going to be off for a while..
+
+<font size=1>[Sat, 16 Jun 2007 15:45:44 -0500]</font>
+
+<hr>
+:.:<font size=5><u>Animation again</u></font>:.:
+I made another random animation..
+<img src="shot_break.gif">
+
+I once ate my window once...I threw up later all the weird bits though..
+<font size=1>[Fri, 15 Jun 2007 01:02:16 -0500]</font>
+
+<hr>
+:.:<font size=5><u>POKE!!</u></font>:.:
+Yea..I got bored...
+<img src="poke.gif">
+<font size=1>[Tue, 12 Jun 2007 22:55:41 -0500]</font>
+
+<hr>
+:.:<font size=5><u>Whooo</u></font>:.:
+Yea, I was el offlineo all yesterday, so I didn't get a chance...for....the blog...like..the Shatner..if that-is...how ...you-spell-it...
+
+ok, now...I'm watching a movie, and not bored right now, so I have no time for this stupid golb...
+<font size=1>[Tue, 12 Jun 2007 20:26:48 -0500]</font>
+
+<hr>
+:.:<font size=5><u>SDL fixed!</u></font>:.:
+Finally fixed the stupid SDL problem...check Robots AI SVN to ch-ch-check it ouut!
+<font size=1>[Sun, 10 Jun 2007 21:14:23 -0500]</font>
+
+<hr>
+:.:<font size=5><u>Stupid SDL</u></font>:.:
+What kinda person makes a plugin with threads but that doesn't fully support threads...
+
+I hatez stupid SDL!! grawdrf!!
+yea..now, if you'll excuse me..
+<font size=1>[Sun, 10 Jun 2007 14:18:48 -0500]</font>
+
+<hr>
+:.:<font size=5><u>Shh! It's a secret!</u></font>:.:
+09 F9 11 02 9D 74 E3 5B D8 41 56 C5 63 56 88 C0   this is a secret number the government doesn't want you to know about! don't tell anyone!(google it if you don't have much of a life)
+<font size=1>[Sun, 10 Jun 2007 02:08:36 -0500]</font>
+
+<hr>
+:.:<font size=5><u>Teh 1337 codez</u></font>:.:
+yea..this is just something I made when I was bored..
+<pre><code>
+#include <stdio.h>
+#include <stdlib.h>
+
+
+
+#define TEH_NUMBER int
+#define STARTZ_PLZ {
+#define END_KK }
+#define ENTERZ_TEH_CODEZ main
+#define TEH_ARGZ (
+#define THX_ARGZ )
+#define K_THX ;
+#define KK ()
+#define SHOWZ_ME printf
+#define TO =
+#define TEH_LETTERS char*
+#define TEH_LETTER char
+#define TIS_ONE [
+#define THX ]
+#define THIS (
+#define SWEETZ )
+#define TELL_THEMZ return
+
+//teh actual codez here!!
+
+TEH_LETTERS MY_NAME TO "TEH 1337ST H@KRZ EVERZ!!!11!\n" K_THX
+
+
+TEH_NUMBER ENTERZ_TEH_CODEZ KK STARTZ_PLZ
+	SHOWZ_ME THIS MY_NAME SWEETZ K_THX
+	TELL_THEMZ 0 K_THX
+END_KK
+</code>
+</pre>
+<font size=1>[Sat, 09 Jun 2007 04:31:12 -0500]</font>
+
+<hr>
+:.:<font size=5><u>The best idea ever!</u></font>:.:
+Ok, aside from letting my Robot AI thing access the internet, I think I'll go ahead and give it control of the CD-tray...this should really create some entertainment both with the user, and the robots fighting over opening and closing it
+
+[I can't be serious :D ]
+<font size=1>[Sat, 09 Jun 2007 03:00:22 -0500]</font>
+
+<hr>
+:.:<font size=5><u>That's cool..</u></font>:.:
+So there I was...just minding my own business and *POOF* yea, poofs are louder than one might think..but anyway so then it appeared and was all like round and crap. So I was sitting there like "Was that really necessary?" and then he was all like "oh yea da foo da bar sheers!" 
+
+I cryed myself to sleep... 0_x
+<font size=1>[Fri, 08 Jun 2007 02:02:29 -0500]</font>
+
+<hr>
+:.:<font size=5><u>Secured!!</u></font>:.:
+Yay! I got this thing secure now...I'll leave that post as a reminder to myself that nothing is secure..
+
+On a side note. I finally got the cross-compiler working for OS deving and I've started on my own bootsector for it..(because I use my own FS)
+
+Also got more stuff written down on Robots AI thing..and I got a good design for how a robot can tell what's in front of it and where it is..
+<font size=1>[Wed, 06 Jun 2007 22:39:29 -0500]</font>
+
+<hr>
+:.:<font size=5><u>Hacked It</u></font>:.:
+Your script is not unhackable.
+<font size=1>[Mon, 04 Jun 2007 23:45:50 -0500]</font>
+
+<hr>
+:.:<font size=5><u>It begins</u></font>:.:
+This is the new blog, how do ya like it?
+It is very nice and "fancy" but it's only text..
+
+Yea...guess that's it for this test message..
+<font size=1>[Mon, 04 Jun 2007 23:16:55 -0500]</font>
+
+<hr>
+
+
+:::end:::
+
+

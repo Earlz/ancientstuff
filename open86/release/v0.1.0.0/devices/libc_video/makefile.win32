@@ -1,0 +1,12 @@
+#This is an attempt to make a standard libc video device
+
+_OBJS=.objs/main.o .objs/font.o
+_CFLAGS=-g -c
+default:
+	gcc $(_CFLAGS) main.c -o .objs/main.o
+	gcc $(_CFLAGS) font.c -o .objs/font.o
+	
+	g++ -shared -W1,--dll $(_OBJS) -lSDL -o libc_video.dll
+
+clean:
+	rm $(_OBJS)

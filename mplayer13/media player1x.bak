@@ -1,0 +1,78 @@
+rem this is a generic media player
+rem this prog was made by jordan earls
+starty:
+print "type 1 to choose where media is"
+print "type 2 to pause music"
+print "type 3 to resume music"
+print "type 4 to reload music"
+print "type 5 to change volume"
+print "type 6 to change speed"
+start:
+input st
+if st=1 then goto w
+if st=2 then goto p
+if st=3 then goto r
+if st=4 then goto a
+if st=5 then goto c
+if st=6 then goto f
+goto start
+a:
+delete music 1
+w:
+if music exist(1) then goto d
+s:
+print "this only plays mp3 and midi files"
+print "make sure to include file endings (file.mp3)"
+print "you can also use a website address (ftp://dom/music.mp3)and (http://domain.com/music.mp3)"
+print "type the path of the music here"
+input path$
+load music path$,1
+play music 1
+loop music 1
+goto starty
+d:
+print "please select 4 to reload music instead"
+goto starty
+p:
+if music paused(1) then goto n
+pause music (1)
+goto starty
+n:
+print "music is already paused"
+goto starty
+r:
+if music playing (1) then goto e
+resume music (1)
+goto starty
+e:
+print "music is already playing"
+goto starty
+c:
+if music exist (1) then goto cf
+print "play some music first"
+goto starty
+cf:
+print "type 1-200 for volume"
+input vol
+set music volume 1,vol
+goto starty
+
+
+f:
+if music exist (1) then  goto fr
+print "play some music first"
+goto starty
+fr:
+print "set the speed 1-200"
+input speed
+set music speed 1,speed
+goto starty
+
+
+
+
+
+
+
+
+

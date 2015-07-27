@@ -1,0 +1,227 @@
+Note! No message handlers should change ANY pointers!! This is for malloc/free operations that
+might be performed by DoneCallBack()
+
+This is a list of messages for Open86
+
+Target: empty(0)
+This has nothing associated with it, and only exists to show that nothing is here
+
+Target: Open86 Core(1)
+This has all the open86 core stuff
+Message: 
+LockCPU (0)
+This will pause execution of the Open86 CPU thread, must do this before writing memory!
+
+UnlockCPU(1)
+This will resume execution of the Open86 CPU thread; this only takes effect if the cpu is paused!
+
+IsCPULocked(2)
+This will set the *return_info to 1 if the cpu is locked, or 0 if not locked
+
+KillOpen86(3)
+This will make open86 send the termination signal to all devices and then exit
+
+RestartOpen86(4)
+This will do the above, except it won't exit, it will instead reinitialize everything 
+
+PauseOpen86(5)
+This will send the pause signal to all devices and lock the CPU
+This does not send the pause signal to the device listed in extra_ptr
+
+
+--Internal Messages--
+These are core messages that should only be sent to itself, by itself
+they all have the prefix of 0xFFFF0000 OR message_number
+
+LoadDevice(0)
+This is used mostly in config files and arguments.. extra_ptr points to a string with the device path
+nothing else is used..
+
+LoadBinFile(1)
+This will load a binary file into the CS:IP listed..
+extra_ptr points to a struct in the form of:
+struct{
+  char filename[512];
+  unsigned short CS;
+  unsigned short IP;
+}..(PACKED)
+
+SetDeviceArgs(2)
+This is used to set device arguments, extra_ptr points to a struct like
+struct{
+  unsigned int target_device;
+  unsigned int target_argument;
+  char 
+
+
+
+
+
+
+Target: Video card(2)
+This device should not worry about displaying graphics, but rather render 
+the guest graphics into a simple buffer using the GUI's resolution specified
+Message:
+GetResolution(0)
+This will return what the current, actual resolution that it renders to
+return_info will have 5bytes alloted, it will be in the format of
+0:(word) width; 2:(word) height; 4:(byte) colors(in bits)
+NOTE: return_info will be free'd after the message event is called, so who sends the message should
+copy it into their own buffer upon leaving the MessageEvent() (if it should be saved, that is)
+
+
+Target: Keyboard(3)
+This device shouldn't worry about gathering keypresses, but rather as a host-to-guest
+type thing. It should do keyboard ports and interrupts for example
+Message:
+GotKeyPress(0)
+Extra contains the key that was pressed
+
+
+Target: Mouse(4)
+This should do mouse ports and interrupts
+Message:
+MouseMoved(0)
+extra_ptr points to 4 bytes with info on how it was moved, it should be in the format of:
+0:(signed byte)X moved 1:(signed byte)Y moved 2:(signed byte)Z moved(middle roller)
+3:(byte) in format of 0bit:left_click 1bit:right_click 2bit: middle_click; all other bits unused
+
+Target: GUI(5)
+This should be the main interface that the user uses. It do things like: make a window
+to show graphics; gather mouse moves and key presses and send messages accordingly; provide
+useful buttons for doing things like restarting open86, ending open86, ect; Also it should
+provide an interface for doing things like controlling the floppy drive(loading images, ect)
+
+Message:
+ChangeResolution(0)
+This is usually sent by the video card to change the resolution of the window
+Extra_info is a pointer to the resolution data like that in VideoCard->GetResolution(2,0)
+The return_info should be 0 for failure, 1 for success, and 2 for error with colors
+
+DisplayGraphics(1)
+This is usually sent by the video card. This tells the GUI that it needs to copy the 
+buffer in extra_ptr to video memory..also extra has how big the buffer is, to avoid overrun
+
+
+Target: PIC(6)
+This controls interrupts
+
+Message:
+SendInterrupt(0)
+Send an interrupt request to the PIC, extra should be the IRQ number
+extra_ptr can point to a function of type void irq_done(unsigned char IRQ_number) that will
+be called upon the receiving of EOI of the IRQ
+
+Target: Keyboard(7)
+
+Message:
+KeyDown(0)
+This tells the keyboard handler that a key is pushed. extra contains the scancode of the key
+
+KeyUp(1)
+same as above, except for this is sent when the key is released
+
+Target: Floppy Controller(8)
+This handles the floppy disk drive. includes the ports, communication to DMA, communication
+to PIC, and the loading and unloading of floppy disk images or drive mounts(not always supported..)
+
+Message:
+LoadImage(0)
+extra_ptr points to a string with the filename of the image
+extra is a bitfield with the bits set below
+..|0-read only;  
+
+;;these below may not be included...
+ReadSector(1)
+extra is what sector number, extra_ptr points to a buffer allocated to put sector info
+
+WriteSector(2)
+same as above except extra_ptr points to a buffer for writing from
+
+GetFDDInfo(3)
+This gets info of the current floppy. extra_ptr WILL point to a struct of the type below
+by "WILL" I mean, that Floppy is responsible for allocating and freeing extra_ptr, so who
+sent the message, should copy the fdd info struct into their own copy
+
+struct{
+  unsigned int bytes_per_sector;
+  unsigned int number_of_heads;
+  unsigned int tracks_in_a_head;
+  unsigned int sectors_in_a_track;
+  unsigned int total_floppy_size;
+  unsigned int read_only;
+}FDDInfo;
+note that that struct will probably be renamed and all, but thats what info it has..
+
+Target: DMA(9)
+
+Messages:
+AttachToChannel(0)
+This will attach the caller to the DMA channel. extra_ptr points to a struct like below.
+who sends the message should allocate and free it
+
+struct{
+  void *DMAEvent; //a function...design function later
+  unsigned int 
+
+
+
+Target: ComPorts(10)
+This has all of the com port stuff
+
+Messages:
+GetPortParameters(0)
+This will get info for how com is configured in this device
+it gets things such as baud rate, parity, ect
+extra contains the info, it is in the same format as AL in BIOS int 14h, ah=00h
+
+
+Target: 
+
+
+
+
+
+Plugin Events:
+These are events where one device "attaches" itself into another
+for instance, a printer, might use this to plug itself into the ltp port device
+the target numbers for this device are above 0xFFFF
+to get the appropriate number, just add the number in parentheses by 0x10000 (I don't feel like typing in hex so..)
+
+Target: Com1Plugin(0)
+This is the plugin for Com1
+
+Messages:
+RecvByte(0)
+extra will contain the byte
+
+RecvWord(1)
+extra will contain the word
+
+RecvDword(2)
+extra will contain the dword
+
+RecvBlock(3)
+this is different from above, this is provided for fast, bulky, transfers of data
+extra_ptr will contain a pointer to the first byte of the data
+extra is the length of the data
+
+GetPortParameters(4)
+This will get info for how com is configured in this device
+it gets things such as baud rate, parity, ect
+extra contains the info, it is in the same format as AL in BIOS int 14h, ah=00h
+
+
+
+Target: Com2Plugin(1)
+everything same as above, except for Com2
+
+Target: Com3Plugin(2)
+everything same as above, except for Com3
+
+Target: Com4Plugin(3)
+everything same as above, except for Com4
+
+
+
+

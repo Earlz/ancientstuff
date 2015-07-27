@@ -1,0 +1,25 @@
+dynamic linking driver concept
+by dynamic linking, I mean to where an application/the kernel can use a driver without
+having to be rebuilt anytime u make any changes to the source code in the driver, so u can just put it in the sys dir and thats it, no rebuilds, no source code modification.
+
+programming with it:
+for a driver function there is just a pointer to any information
+and it is the drivers repsonsibility to convert the pointer to useable information
+the pointer can be of any any type as it is of type void and the driver will determine if it is a byte or word or whatever.
+
+making a driver:
+there is a special driver format
+it consists of only 1 function, main() or otherwise no functions/procs just the entry point
+the pointer is in 0x14FF:0x0000(offset possible to change), highword is the segment, lowword 2 is offset
+there is a 16 byte header to the resulting binary file of a build
+this is the order
+1-pointer to the name of the driver(4 bytes, 2words with high segment and low offset)|5-device type(not id), list of device types to be built(1)| to be built..
+
+using a driver:
+to call a driver function all you do is farjmp to the driver function although you should let the kernel handle it as it will keep a list of devices in use and provides a much simple interface to use
+
+to use it via the built in kernel interface all you do is call with int error=driverfunc(byte deviceid,char *name,void *arg) if no name is provided then it will use the default driver for the deviceid, the arg is a pointer to the argument that will be passed to the driver, it returns 0 if all is successful(most of the time) and a driver can also return a value in the same way arguments can be passed
+
+the interface technical details(kernel):
+drv_inf ref=loaddriver(char *filename)
+This function does nothing more than load a driver into memory, filter it accordingly, and populate the drv_inf struct(returned)

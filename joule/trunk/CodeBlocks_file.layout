@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="default" />
+	<File name="Makefile" open="0" top="0" tabpos="1">
+		<Cursor position="1004" topLine="0" />
+	</File>
+	<File name="asm.asm" open="0" top="0" tabpos="8">
+		<Cursor position="92" topLine="0" />
+	</File>
+	<File name="include\k_JouleOS.h" open="0" top="0" tabpos="3">
+		<Cursor position="2365" topLine="48" />
+	</File>
+	<File name="kernel\gdt.c" open="0" top="0" tabpos="1">
+		<Cursor position="1669" topLine="87" />
+	</File>
+	<File name="kernel\idt.c" open="0" top="0" tabpos="7">
+		<Cursor position="70" topLine="0" />
+	</File>
+	<File name="kernel\main.c" open="1" top="0" tabpos="3">
+		<Cursor position="276" topLine="3" />
+	</File>
+	<File name="kernel\mem_manager.c" open="1" top="1" tabpos="2">
+		<Cursor position="830" topLine="12" />
+	</File>
+	<File name="lib\asm_in_c.c" open="0" top="0" tabpos="0">
+		<Cursor position="627" topLine="0" />
+	</File>
+	<File name="lib\bitmap_manip.c" open="0" top="0" tabpos="6">
+		<Cursor position="1524" topLine="7" />
+	</File>
+	<File name="lib\extras.c" open="0" top="0" tabpos="3">
+		<Cursor position="260" topLine="0" />
+	</File>
+	<File name="lib\strings.c" open="0" top="0" tabpos="4">
+		<Cursor position="347" topLine="9" />
+	</File>
+	<File name="link.ld" open="1" top="0" tabpos="4">
+		<Cursor position="164" topLine="0" />
+	</File>
+	<File name="makefile.win32" open="1" top="0" tabpos="1">
+		<Cursor position="926" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>

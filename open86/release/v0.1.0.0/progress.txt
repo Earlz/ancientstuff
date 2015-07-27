@@ -1,0 +1,98 @@
+####DONE OPCODES####
+hlt -currently just panics because otherwise it just hangs
+nop -currently used as a cpu status dump instruction
+mov (8 bit general register),(immediant byte)
+mov (16 bit general register),(immediant word)
+jmp (relative signed 16 bit address)
+jmp (relative signed 8 bit address)
+jmp FAR segment:(16 bit pointer)
+mov (effective address/8 bit register),(general 8 bit register)
+push (16bit general register)
+pop (16bit general register)
+push (immediant word)
+push (immediant byte)
+call (relative signed 16bit address)
+push es
+push cs
+push ss
+push ds
+ret NEAR 0
+call FAR (immediant segment):(immediant 16bit offset)
+push (effective address)
+sub al,(immediant byte)  --AF I'm not for sure is set right
+sub ax,(immediant word) --same as above
+ja (relative signed 8bit address)
+jo (relative signed 8bit address)
+jno (relative signed 8bit address)
+jc (relative signed 8bit address)
+jnc (relative signed 8bit address)
+jz (relative signed 8bit address)
+jnz (relative signed 8bit address)
+jbe (relative signed 8bit address)
+js (relative signed 8bit address)
+jns (relative signed 8bit address)
+jp (relative signed 8bit address)
+jnp (relative signed 8bit address)
+jl (relative signed 8bit address)
+jge (relative signed 8bit address)
+jle (relative signed 8bit address)
+jg (relative signed 8bit address)
+salc --this is an undocumented opcode and works like if(cf=1) then al=0xFF else al=0
+cmc
+clc
+cld
+cli
+out (immediant byte),al
+loop (relative signed 8bit address)
+out (immediant byte),ax
+mov (8bit general register),(effective address/8bit general register)
+mov (16bit general register),(effective address/16bit general register)
+mov (effective address/16bit general register),(segment register)
+mov (segment register),(effective address/16bit general register)
+mov (effective address/16bit general register),(16bit general register)
+int (immediant byte)  --this does not mean I have pic or any hardware ints
+int 3 --debug interrupt..
+into  --calls int 4
+iret  
+add al,immediant byte
+add ax,immediant word
+pop es
+pop ds
+pop ss
+lods (8 bit memory address)
+
+
+
+
+####DEVICE SUB-SYSTEM####
+I have all the port stuff worked out now...
+GlobStruct is still not done and all of the standard device
+functions are not currently listed anywhere
+
+
+####DEVICES####
+Currently no standard devices are made
+
+
+####GUI####
+There currently is no GUI
+
+
+####CONFIG FILES####
+The design is in /docs/ ...
+currently some command line options are supported
+they include ?L_com:"file.com", ?L_bin:"file.bin", ?log:"logfile.txt"
+
+
+
+####END####
+
+
+
+
+
+
+
+
+
+

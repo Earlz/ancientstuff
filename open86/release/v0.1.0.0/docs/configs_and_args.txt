@@ -1,0 +1,35 @@
+This is my plan for the final design...
+
+# is a single line comment(no multiline comments..yet..)
+: is a general seperator, it seperates keywords from other keywords and arguments(allows multiple commands on a line)
+? is preprocessor things
+keywords/commands:
+
+unix_only:  --this  will execute the next command only if your using unix
+win32_only: --this will do the above except with windows
+load_bin:"file" --this will load the file specified as a binary file
+load_com:"file" --like above except it will load it at ip=100
+cpu:X086 --this will set the cpu to the level specified, for instance X186, X286, X386...also use
+--XBEST for the latest stable cpu level
+mem:32  --this will allocate however much memory you specify(currently does nothing)
+
+
+planned to be added:
+load_dev:"device" --this will load the device file specified, note you can make it portable
+--by instead of the system-dependent file extension, you can put just a '.' and open86 will
+--replace it with the most common file extension used for external libraries
+--note that if the file isn't in path or the current directory, then it will look in the open86 dev dir
+?include:"file" --this will include a config file from the open86 directory or the current directory
+--I will eventually include common device sets so you can just do something like
+--?include:"8086_common_devices.o86" and it include the common devices needed(and configure them)
+configure:device:section:"my_configuration" --this will configure the device specified
+--section should be what to configure, and my_configuration should be what to configure it to
+--for example(not finalized!) to configure a vga adapter you might do something like
+--configure:video_adapter:video_rom:"./my_video_rom.rom" 
+set_debug:on --this will enable debug mode, note that this can be disabled by emulated applications(and enabled back)
+--though if this is never set on then the emulated applications have no control over debug stuff(for security)
+--note this won't really be noticed if a debugging device isn't loaded
+set_disasm:on --this will turn on disassembling, it will actually just enable it and alert the disassembling
+--device(though open86 does disassemble it, the disasm device should show you it and such)
+random_memory:on --this will randomize the rams default values rather than set it all to 0, useful
+--for making sure your OS will work on an actual PC as well

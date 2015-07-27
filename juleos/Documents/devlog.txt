@@ -1,0 +1,14 @@
+July 23,2005
+started this but no time to put anything down tonight
+
+July 24,2005
+6:49pm
+Not quiting time yet but i have managed to get my int 13h problem worked out; so FDFS development should continue at a more steady pace. still working on trying to make interrupts and have found its not TurboC/TASM's fault but rather my method so i chould figure it out sometime. */
+
+9:30pm
+ok think im about to quit for the night and btw */ means its the end of the writing at that time.
+i have managed to get fdfs_format working although the interface is lacking somewhat; now to work on fdfs_mkfile or a bootsector tommorrow */
+
+July 27,2005
+3:14pm
+FDFS is hell theres so much to be done. im basically needing to rewrite quite a few things to be more effeicent and what i thought worked dont so now to fix abswrite and absread which i have no idea what the problem is with them. my math teacher would be happy with me, i got some math figured out with abs's though im going to hate having to upgrade to an hdd.

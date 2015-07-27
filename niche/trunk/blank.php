@@ -1,0 +1,3 @@
+<?php
+	//This is a blank page to avoid warnings, and without me recoding a ton of stuff...
+?>

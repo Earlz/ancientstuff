@@ -1,0 +1,197 @@
+# depslib dependency file v1.0
+1164508020 source:d:\open86_\trunk\dynamic_loading.c
+	<stdlib.h>
+	<stdio.h>
+	"_base.h"
+	<windows.h>
+	<dlfcn.h>
+	<dlfcn.h>
+
+1164523229 d:\open86_\trunk\_base.h
+	"Open86_Device.h"
+
+1164524635 source:d:\open86_\trunk\helpers.c
+	"_base.h"
+
+1164424229 source:d:\open86_\trunk\instructions\ect.c
+	"../_base.h"
+
+1164420893 source:d:\open86_\trunk\instructions\groups.c
+	"../_base.h"
+
+1164492266 source:d:\open86_\trunk\instructions\jmp.c
+	"../_base.h"
+
+1164523767 source:d:\open86_\trunk\instructions\mov.c
+	"../_base.h"
+
+1164502971 source:d:\open86_\trunk\instructions\ports.c
+	"../_base.h"
+	<stdio.h>
+
+1164420893 source:d:\open86_\trunk\instructions\push_pop.c
+	"../_base.h"
+
+1164420893 source:d:\open86_\trunk\instructions\sub_add.c
+	"../_base.h"
+
+1164524965 source:d:\open86_\trunk\main.c
+	<stdio.h>
+	<stdlib.h>
+	"_base.h"
+
+1164490169 source:d:\open86_\trunk\panic.c
+	"_base.h"
+	<stdio.h>
+
+1164487524 d:\open86_\trunk\open86_device.h
+	"_base.h"
+
+1164486969 source:d:\open86_\trunk\instructions\undoc.c
+	"../_base.h"
+
+1172965441 source:f:\open86_sf_new\trunk\config_files.c
+	"_base.h"
+	"Open86_Device.h"
+	<stdio.h>
+
+1173044219 f:\open86_sf_new\trunk\_base.h
+	"config.h"
+	"Open86_Device.h"
+
+1172452924 f:\open86_sf_new\trunk\config.h
+
+1173044219 f:\open86_sf_new\trunk\open86_device.h
+
+1173044220 source:f:\open86_sf_new\trunk\dynamic_loading.c
+	<stdlib.h>
+	<stdio.h>
+	"_base.h"
+	<windows.h>
+	<dlfcn.h>
+	<dlfcn.h>
+
+1172878291 source:f:\open86_sf_new\trunk\helpers.c
+	"_base.h"
+
+1172798218 source:f:\open86_sf_new\trunk\instructions\bitwise.c
+	"../_base.h"
+
+1172798650 source:f:\open86_sf_new\trunk\instructions\ect.c
+	"../_base.h"
+
+1172798773 source:f:\open86_sf_new\trunk\instructions\groups.c
+	"../_base.h"
+
+1172798837 source:f:\open86_sf_new\trunk\instructions\inc_dec.c
+	"../_base.h"
+
+1172799062 source:f:\open86_sf_new\trunk\instructions\ints.c
+	"../_base.h"
+
+1172802607 source:f:\open86_sf_new\trunk\instructions\jmp.c
+	"../_base.h"
+
+1172799297 source:f:\open86_sf_new\trunk\instructions\mov.c
+	"../_base.h"
+
+1172799391 source:f:\open86_sf_new\trunk\instructions\mul_div.c
+	"../_base.h"
+
+1172800098 source:f:\open86_sf_new\trunk\instructions\ports.c
+	"../_base.h"
+	<stdio.h>
+
+1172802709 source:f:\open86_sf_new\trunk\instructions\push_pop.c
+	"../_base.h"
+
+1172802816 source:f:\open86_sf_new\trunk\instructions\sub_add.c
+	"../_base.h"
+
+1172798514 source:f:\open86_sf_new\trunk\instructions\undoc.c
+	"../_base.h"
+
+1173044220 source:f:\open86_sf_new\trunk\main.c
+	<stdio.h>
+	<stdlib.h>
+	"_base.h"
+
+1172804471 source:f:\open86_sf_new\trunk\panic.c
+	"_base.h"
+	<stdio.h>
+
+1194205008 source:f:\projects\open86\trunk\config_files.c
+	"_base.h"
+	"Open86_Device.h"
+	<stdio.h>
+
+1194205008 f:\projects\open86\trunk\_base.h
+	"config.h"
+	"Open86_Device.h"
+
+1194205008 f:\projects\open86\trunk\config.h
+
+1194205008 f:\projects\open86\trunk\open86_device.h
+
+1194205008 source:f:\projects\open86\trunk\cpu_bios.c
+	"_base.h"
+
+1194205008 source:f:\projects\open86\trunk\dynamic_loading.c
+	<stdlib.h>
+	<stdio.h>
+	"_base.h"
+	<windows.h>
+	<dlfcn.h>
+	<dlfcn.h>
+
+1194205008 source:f:\projects\open86\trunk\helpers.c
+	"_base.h"
+
+1194205007 source:f:\projects\open86\trunk\instructions\bitwise.c
+	"../_base.h"
+
+1194205007 source:f:\projects\open86\trunk\instructions\ect.c
+	"../_base.h"
+	"../_base.h"
+
+1194205007 source:f:\projects\open86\trunk\instructions\groups.c
+	"../_base.h"
+
+1194205007 source:f:\projects\open86\trunk\instructions\inc_dec.c
+	"../_base.h"
+
+1194205007 source:f:\projects\open86\trunk\instructions\ints.c
+	"../_base.h"
+	<stdio.h>
+
+1194205007 source:f:\projects\open86\trunk\instructions\jmp.c
+	"../_base.h"
+
+1194205007 source:f:\projects\open86\trunk\instructions\mov.c
+	"../_base.h"
+
+1194205007 source:f:\projects\open86\trunk\instructions\mul_div.c
+	"../_base.h"
+
+1194205007 source:f:\projects\open86\trunk\instructions\ports.c
+	"../_base.h"
+	<stdio.h>
+
+1194205007 source:f:\projects\open86\trunk\instructions\push_pop.c
+	"../_base.h"
+
+1194205007 source:f:\projects\open86\trunk\instructions\sub_add.c
+	"../_base.h"
+
+1194205007 source:f:\projects\open86\trunk\instructions\undoc.c
+	"../_base.h"
+
+1194205008 source:f:\projects\open86\trunk\main.c
+	<stdio.h>
+	<stdlib.h>
+	"_base.h"
+
+1194205008 source:f:\projects\open86\trunk\panic.c
+	"_base.h"
+	<stdio.h>
+

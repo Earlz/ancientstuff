@@ -1,0 +1,23 @@
+;FDFS Boot Sector
+;jumps to juleos bootsector(2 sectors)
+;For FDFS 1.0 16bit
+;BootSector 1.0
+ORG 7C00h ;boot signature
+
+MOV     AH, 00h
+MOV     AL, 03h
+INT     10h
+
+MOV     AH, 02h ; read function.
+MOV     AL, 10  ; sectors to read.
+MOV     CH, 0   ; cylinder.
+MOV     CL, 2   ; sector.
+MOV     DH, 0   ; head.
+; DL not changed! - drive number.
+MOV     BX, 0500h   ;this is segment
+MOV     ES, BX
+MOV     BX, 0 ;this is intitial offset
+
+; read!
+INT     13h
+JMP     0500h:0000h ;this is where it jumps starts at the first segment

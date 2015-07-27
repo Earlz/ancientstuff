@@ -1,0 +1,17 @@
+
+ Start  Stop   Length Name               Class
+
+ 00000H 00000H 00001H _TEXT              CODE
+ 00002H 00002H 00000H _DATA              DATA
+ 00002H 00002H 00000H _BSS               BSS
+
+  Address         Publics by Name
+
+ 0000:0000       _MAIN
+
+  Address         Publics by Value
+
+ 0000:0000       _MAIN
+
+Fatal: No program entry point
+

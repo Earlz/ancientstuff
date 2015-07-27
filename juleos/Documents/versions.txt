@@ -1,0 +1,24 @@
+
+0.0.4 pre-alpha(not yet released)
+finally got a few more commands in the shell.
+fdfs is slowly but surely being made
+many needed functions are made and being debugged so i can make some higher level functions
+of the functions are absread/abswrite(reads sectors and ignores the physical layout of a drive), cacheindex(puts the index
+off of the disk and into a segment for speed), load2mem/getmem(loads and reads bytes from different segments and offsets)
+
+
+
+0.0.3 pre-alpha
+bug fixed with letters going off the screen in the shell.
+fixed printf and scanf to work much better.(including better filtering of keys)
+changed to structs in getkey()
+
+0.0.2 pre-alpha
+shell has been developed and is usable.
+hardly any function.
+
+0.0.1 pre-alpha(unreleased)
+very, very rough
+no shell was developed.
+basically just a lot of testing.
+not very pretty

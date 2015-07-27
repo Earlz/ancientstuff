@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="default" />
+	<File name="archive.php" open="1" top="0" tabpos="4">
+		<Cursor position="721" topLine="4" />
+	</File>
+	<File name="edb.php" open="1" top="0" tabpos="5">
+		<Cursor position="399" topLine="0" />
+	</File>
+	<File name="image\index.html" open="0" top="0" tabpos="0">
+		<Cursor position="173" topLine="0" />
+	</File>
+	<File name="index.php" open="1" top="0" tabpos="1">
+		<Cursor position="2329" topLine="51" />
+	</File>
+	<File name="list.php" open="1" top="0" tabpos="2">
+		<Cursor position="326" topLine="0" />
+	</File>
+	<File name="pic.php" open="1" top="1" tabpos="6">
+		<Cursor position="355" topLine="2" />
+	</File>
+	<File name="style.css" open="1" top="0" tabpos="3">
+		<Cursor position="489" topLine="17" />
+	</File>
+</CodeBlocks_layout_file>

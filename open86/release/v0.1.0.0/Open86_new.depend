@@ -1,0 +1,52 @@
+# depslib dependency file v1.0
+1164508020 source:d:\open86_\trunk\dynamic_loading.c
+	<stdlib.h>
+	<stdio.h>
+	"_base.h"
+	<windows.h>
+	<dlfcn.h>
+	<dlfcn.h>
+
+1164523229 d:\open86_\trunk\_base.h
+	"Open86_Device.h"
+
+1164524635 source:d:\open86_\trunk\helpers.c
+	"_base.h"
+
+1164424229 source:d:\open86_\trunk\instructions\ect.c
+	"../_base.h"
+
+1164420893 source:d:\open86_\trunk\instructions\groups.c
+	"../_base.h"
+
+1164492266 source:d:\open86_\trunk\instructions\jmp.c
+	"../_base.h"
+
+1164523767 source:d:\open86_\trunk\instructions\mov.c
+	"../_base.h"
+
+1164502971 source:d:\open86_\trunk\instructions\ports.c
+	"../_base.h"
+	<stdio.h>
+
+1164420893 source:d:\open86_\trunk\instructions\push_pop.c
+	"../_base.h"
+
+1164420893 source:d:\open86_\trunk\instructions\sub_add.c
+	"../_base.h"
+
+1164524965 source:d:\open86_\trunk\main.c
+	<stdio.h>
+	<stdlib.h>
+	"_base.h"
+
+1164490169 source:d:\open86_\trunk\panic.c
+	"_base.h"
+	<stdio.h>
+
+1164487524 d:\open86_\trunk\open86_device.h
+	"_base.h"
+
+1164486969 source:d:\open86_\trunk\instructions\undoc.c
+	"../_base.h"
+

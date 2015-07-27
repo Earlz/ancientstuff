@@ -1,0 +1,22 @@
+my best Idea for event driven stuff so far is to have a special thing to allocate
+an event "stack" this "stack" has a limit of 254(linked list stuff in 0 and 255)
+though you can have multiple stacks
+for every device, console, or other control type thing you have to install an event into the event stack
+such as for make a console you would install an event into whatever base number you want and then it would install events for things like keyboard input, clicking, console changes, ect
+installing the events of the console but not actually having them point to a function and then
+in the default event(which is called when any event happens) have it put something in a message stack
+or whatever
+you can also always poll everything like in dos, rather than install events you can just do things
+like gets and such only when you want to or are waiting for something
+
+for internals and drivers:
+they are responsible for installing and uninstalling events..
+to install you should store... the pid, the event stack address, and the event number to be used for your
+events
+
+
+??
+
+
+
+

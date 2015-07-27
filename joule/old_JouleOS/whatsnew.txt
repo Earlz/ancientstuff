@@ -1,0 +1,41 @@
+>>This is not updated every revision<<
+10-14-06: -release 0.0.7
+Completely redid all the video stuff so now it supports multi-console though they share keyboard stacks
+removed a lot of docs
+Have a buggy fdd driver though it does work(sometimes)
+now have cpuid code(thanks brynet.be)
+have some nonworking multitasking code
+reorganized just about all code
+now have some good things like printf("blah %x",my_hex)
+have application ints(syscals) all designed out mostly
+
+think thats about it...
+
+
+08-05-06:
+Readded TSS though it is not working
+Added a start for the task manager
+Added blinking cursor
+Made some minor changes here and there
+Discovered a bug with the event drive call in IRQ1(Keyboard) though not fixed yet
+Changed all the names to JouleOS
+
+07-20-06:
+Added this file
+Added a basic terminal applications
+Have some floppy code that works in bochs
+Now have the EventDrive system working
+Changed to where there is now no paging, before it was enabled by the bootloader but now it isn't
+Changed default video mode so that it works good in VPC
+Sorted out the code a bit
+Moved some stuff out of the kernel library and into drivers or kernel
+Made some changes to the total design of JouleOS
+Made some changes to the PCFS specifications
+Changed my DMA system of code
+Added debug.h which has some nifty debugging macro's
+Added COM1 support
+Added buggy PS/2 mouse support
+Added ramdisk.c which is a WIP ramdisk project\
+Added Final Design.txt which is supposedly my final design
+Added initializing text stuff
+Added help for terminal and in the help list it now says terminal

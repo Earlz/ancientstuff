@@ -1,0 +1,70 @@
+ASX is an object code based on an imaginery architechure. It is not designed to be used directly, but rather, to be used by compilers for making portable code generation. Though it is possible to be emulated directly, it is designed to be translated into an actual arch's machine code. 
+
+ASX is designed as a small instruction set arch. Though, it has many registers. Registers are addressed in banks. There are 16 banks and each bank holds 16 registers, so 256 registers is the maximum. Because caching and size and such do not matter with this imaginery arch, the machine code is designed to be very easy to read. 
+
+ASX can switch (dynamically) from small endian and big endian format. Also, the word byte storage format can be changed dynamically. (in most cases, this is only initalized at the start of a program, and never changes however)
+
+Also, at the beginning of object code, you must define these values. These can be changed later however. (dynamically)
+1. register/pointer size
+2. far pointer size(note 2 registers are used, so this can only be up to size_of_register*2
+3. far far pointer size(note 4 registers are used, so this can be up to size_of_register*4)
+(note after changing register size, all registers are undefined)
+
+
+features:
+1. Endian independent code generation.
+2. byte order and register size independent code generation.
+
+limits:
+1. No self-modifying code.
+2. optimizations may be missed.
+3. programmers may think that registers are fast, but they may actually only be memory. (and slow)
+
+
+Differences from most archs:
+1. The code segment is execute-only, no reading or writing.
+2. 
+
+This is designed not to speed up applications, but to make them more portable, by "emulating" the environment they are use to.
+
+
+Data addressing:
+--Because of how the code segment can not be treated as data(due to it's unreliablity in interpretation) data must be addressed differently.
+The easiest way would just be to add special to tell if something addresses a label, and adjust that to the actual label address after interpretation.
+for instance, (with word being default pointer and register size)
+mov r0,_label
+mov byte [_label],1
+
+_label: db 0
+~
+
+that could be translated into more direct code
+mov r0, {reloc 0}
+mov byte [{reloc 0}],1
+
+_label{reloc 0}: db 0
+
+reloc being a special thing that is basically looks like a macro, only it is done at translate time, rather than preprocessor.
+the number after reloc tells which relocatable lable number.
+a more elaborate example:
+mov r0, {reloc 0}
+mov byte [r0],1
+mov r1,{reloc 1}
+mov r2,{reloc 2}
+
+
+
+
+
+general instruction formats:
+
+opcode(5-6 bits):type | arguments
+memory: type(1 byte)
+depending on type:
+near absolute immediate: ptr(size of near ptr)
+far absolute immediate: ptr(size of far ptr)
+far far absolute immediate: ptr(size of far far ptr)
+
+
+
+

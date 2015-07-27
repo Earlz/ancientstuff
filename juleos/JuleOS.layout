@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE Code::Blocks_layout_file>
+<Code::Blocks_layout_file>
+	<File name="source\FDFS\FDFS.c" open="1" top="0">
+		<Cursor position="420" topLine="0"/>
+	</File>
+	<File name="source\FDFS\init.c" open="1" top="0">
+		<Cursor position="1620" topLine="75"/>
+	</File>
+	<File name="source\FDFS\raw_RW.h" open="1" top="0">
+		<Cursor position="0" topLine="0"/>
+	</File>
+	<File name="source\FDFS\utils.c" open="1" top="1">
+		<Cursor position="532" topLine="3"/>
+	</File>
+	<File name="source\main.c" open="0" top="0">
+		<Cursor position="507" topLine="0"/>
+	</File>
+	<Expand folder="/Sources/source/FDFS"/>
+	<Expand folder="/Sources/source"/>
+	<Expand folder="/Sources"/>
+</Code::Blocks_layout_file>

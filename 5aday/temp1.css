@@ -1,0 +1,78 @@
+
+p.timestamp{
+	font-size: xx-small;
+}
+
+body{
+	background-color: #222222;
+	color: #BBBBBB;
+	text-align: center;
+
+}
+
+a{
+	color: #333399;
+}
+
+div.nav{
+
+	text-align:center;
+
+
+	font-weight: bold;
+
+
+}
+
+
+div.comic_list{
+	text-align: center;
+
+}
+
+
+
+
+div.info{
+	color: #FFFFFF;
+	text-align: center;
+	margin-top: 2em;
+
+}
+
+div.note{
+	text-align: center;
+	font-style: italics;
+	font-size: small;
+	width: 100%
+}
+
+
+div.header{
+	font-size: large;
+	text-align: center;
+	font-weight: bold;
+
+}
+
+div.comic{
+	width: 100%;
+	font-size: small;
+	font-style: italics;
+
+	text-align: center;
+
+
+}
+
+
+div.copy{
+	width: 100%;
+	font-size: xx-small;
+	text-align: center;
+	margin-left: 1%;
+	margin-right: 1%;
+	margin-top: 2%;
+	color: #999999;
+	float: right;
+}

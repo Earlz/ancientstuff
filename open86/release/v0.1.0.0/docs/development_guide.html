@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>docs\development_guide.txt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<meta name="generator" content="Code::Blocks Exporter plugin" />
+<style type="text/css">
+<!--
+body { color: #000000; background-color: #FFFFFF; }
+--></style></head>
+<body>
+<pre>
+<code><span style="font: 8pt Courier New;"><span class="body">--Open86 Development Guide--
+TODO: add emulated memory access section!!
+--Table of Contents--
+
+--General info:
+  1. What is this!?
+  2. The basic design aspects of Open86
+--Modifying the Open86 core:
+  3.  The basics to modifying source
+  4.  Adding a file to the MakeFile
+  5.  How to access registers
+  6.  Creating Instructions
+  7.  Adding command line arguments
+  8.  Creating internal port functions
+  9.  Calling Device Functions
+  10. Portable considerations
+--Creating or editing an Open86 device:
+  11. Making a simple device
+  12. About GlobStruct
+  13. Accessing registers(using GlobStruct)
+  14. Creating a port function
+  15. Portable considerations(for devices)
+  16. Making a "specialized" device
+  17. Complete list of standard devices
+--Creating an OS or program under Open86:
+  18. Basics
+  19. Debugging
+
+maybe more later...
+
+
+
+
+--1. What is this!?--
+This file describes how to modify Open86, Create a plugin/device, and gives useful info for creating an OS under
+Open86. About anything you'll need to know will be here. If you need to know something not listed here then 
+goto <a href="http://sourceforge.net/projects/open86">http://sourceforge.net/projects/open86</a> and then submit a support request or post on the forum
+
+
+--2. The basic design aspects of Open86--
+The main goal of Open86 is to create a portable, free, opensource x86 emulator. To make it portable
+I must interpret every opcode byte-by-byte into the correct code to be emulated, which is slow compared to other
+methods.
+    Open86's big thing is that it will support external devices(unlike any other emulator I've seen) so that 
+you can make a device with nothing but gcc and my special header file for GlobStruct. Also, with Open86 you will be
+able to test your OS under special conditions not easily done in other emulators. For instance, you can specify to
+only use 8086 opcodes, so that you can see that your OS will work on a plain 8086
+   Open86's target audience is not only devlopers but also average users that want to use an OS that they can't
+run on their PC, or if they don't want to risk destroying their PC
+
+
+----Modifying the Open86 core:------
+
+--3. The basics to modifying source--
+For almost every source file you will need to include "_base.h" as it contains almost
+everything that Open86 uses
+
+more later..
+
+--4. Adding files to the MakeFile--
+Adding files to be made is quite simple. First, Open up the MakeFile. Next, goto under the target default. Right below the
+nasm command type:(without quotes) "gcc $(_CFLAGS) MyFile.c -o .objs/MyFile.o" Next find "_OBJS=" and add to 
+the list: ".objs/MyFile.o" (without quotes)
+
+
+
+--5. How to access registers--
+Accessing registers is pretty simple in Open86. To access 8bit general registers just use something like *gregs8[AH];
+To access the 16 bit general registers just use gregs16[AX]; and for segment registers use sregs[DS]; For ip
+just use the variable "ip". Finally, to access the flags register you can either use the unsigned short version
+which is flagreg; or you can use the easier, bitfield'ed flags-&gt;; which is a struct and just use something like
+flags-&gt;zf; and thats the zero flag. Note! the interrupt flag is accessed by flags-&gt;_if
+   In a lot of my code I use the macros doeip; and doiptr; these functions calculate eip for me and doiptr; will
+automatically update the variable iptr so that it points to [cs:ip] in the emulated memory(but we can access it from
+the actual computer)
+
+
+--6. Creating Instructions--
+Creating Instructions is a tad bit complicated, but it's easy once you've done it 2 or 3 times
+First, decide where your instruction function should go, find something that suits it in instructions/
+if it doesn't really seem to fit anywhere then you can either create a new file(and add it to the makefile) or
+you can put it in instructions/ect.c
+   Now instructions are simple void instruction_operand(void) type functions. so just create your function
+I'm assuming that you'll read the rest of this document to figure out what you need for actually coding the instruction.
+When you finally get the instruction code done, then just add the function prototype to "_base.h" at the bottom with
+all the other instruction prototypes(around line 212 or so.) We must add a function prototype to get the address of
+the function without C going crazy. 
+   Finally, now all you do is open up main.c and find the "InitOpcodes()" function and at the bottom of
+the function(but still in the function) add this line of code "InstallOp(OPCODE_VALUE,OPCODE_FUNCTION);" replacing
+the words in caps to their appropriate values. Now you can test it or whatever..
+
+
+--7. Adding command line arguments--
+Adding a command line argument is pretty easy but in your argument you MUST have 1 pair of double quotation marks(")
+
+finish later..
+
+--8. Creating internal port functions--
+To create a port handler inside the core is quite simple. First, you create the function with this format:
+in=MyPort(out,in_or_out,size_of_data); --size of data is in number of bytes --in_or_out is 1 for in and 0 for out
+When you create the function all you have to do is ports[MY_PORT_NUMBER]=&amp;MY_PORT_FUNCTION; and put that code somewhere
+before DoCpu() in main() (you should see a few other port things there.) Note that you may need to prototype your port in _base.h
+
+
+--9. Calling Device Functions--
+doing later...
+
+--10. Portable Considerations--
+Open86 is meant to be portable so you must isolate any OS-dependent code using #ifdef stuff
+also for pointer arithmetic involving adding pointers don't assume that pointer size is 4, instead
+use "sizeof(void *);"
+
+
+----Creating or editing an Open86 device:------
+
+
+--11. Making a simple device--
+Making devices for Open86 is quite simple, though it does require a bit of "startup code." I assume that you know how
+to build a runtime linkable library for your OS! First (assuming you have a blank main.c) copy Open86_Device.h to the
+directory of your source files, Then add to your main.c #include "Open86_Device.h". Now you need to add a function
+to get the GlobStruct pointer(this is required!) so use this little template
+//code//
+GlobalDevice *GlobStruct;
+#define EXPORT //whatever you have to add to make sure the symbol is shared/exported
+unsigned int EXPORT Open86Init(GlobalDevice *_globstruct){
+  GlobStruct=_globstruct;
+  return 0; //this should not return 0 if their was an error
+}
+//end code//
+Now just build and use the command Open86 ?L_dev:"MY_DEVICE" to test it(might need to specify a file also to load and run
+though..
+
+
+
+
+--12. About GlobStruct--
+GlobStruct is the magic struct that contains almost all the data for Open86. It includes CPU state(registers and such),
+all of the device handles, port pointers, ect. It is REQUIRED for most every useful device as without it you wouldn't have
+access to anything in Open86
+
+
+--13. Accessing Registers(using GlobStruct)--
+Accessing registers is quite simple and easy once you got GlobStruct recieved and saved. To access 8 bit general registers
+you just(assuming your GlobStruct is named GlobStruct) use *GlobStruct-&gt;_gregs8[AH]; To access 16bit general
+registers you use GlobStruct-&gt;_gregs16[AX]; To access 16 bit segment registers use GlobStruct-&gt;_sregs[DS];
+And to Access ip you use *GlobStruct-&gt;ip  Finally to access flags you can either use the unsigned short type which is
+*GlobStruct-&gt;_flagreg; or you can use the easier method like *GlobStruct-&gt;_flags-&gt;zf; would be for zero flag.
+
+
+--14. Creating a port function--
+Creating an extern port function is very similar to creating one internal, you just have to add GlobStruct to it! To
+Create a port function you can follow this template:
+in=MyPort(out,in_or_out,size_of_data){} --size of data is in number of bytes --in_or_out is 1 for in and 0 for out
+Next, we need to install the port function. We do this by doing somethign like:
+*GlobStruct-&gt;_ports[PORT_NUMBER]=MyPortFunction;
+
+
+--15. Portable considerations--
+Read 10. Portable considerations (under Modifying the Open86 core)
+
+--16. 
+
+
+--17. Complete list of standard devices
+note: in this list I don't tell what ports the device is responsible for, as this varies too much by specific model emulated
+another note: these only include the specific device functions, there still needs to be Open86Init and friends
+
+--list of funcitons in every device
+This is a list of functions that should be in every device(even if it does nothing)
+
+(unsigned int)error=Open86Init(GlobalDevice *GlobStruct);
+this is called for initialization and to give you GlobStruct
+
+(unsigned int)error=Open86Signal(unsigned int signal,void *extra_data,unsigned int size_of_exta_data);
+This is called when Open86 needs to send a signal, such as for shutting down, pausing, reset, ect.
+list of signals:
+0: shutdown signal; extra_data points to nothing; doesn't do anything but warn if error isn't 0
+1: pause signal; extra_data is device handle of who paused it; panics if the return wasn't 0
+no other signals..yet..
+2: resume signal; extra_data is nothing; panics if the return isn't 0
+4: reset signal;extra data points to nothing; panics if return isn't 0
+beware that reset or shutdown may be sent after pause before resume
+
+
+--name: std_Video
+--description: This is responsible for handling anything video related except actually displaying it
+--functions:
+void SetResolution(unsigned int width,unsigned int height, unsigned char bpp, unsigned char graphical);
+this function will set the current resolution. graphical should be 0 for text modes or 1 for graphic modes
+bpp means bits per pixel, for text modes this has to be either 3 or 4(8 colors for multiple fonts or 16 colors for usual operation)
+for graphics modes it can be anything
+
+void PutPoint(unsigned int x,unsigned int y, unsigned int character_or_color);
+for graphics modes character_or_color is jsut the pixel color. for text modes it is
+in the format of 1st(lowest) byte being character and color being the second byte. the upper 2 bvtes are ignored
+
+(unsigned int)character_or_color=GetPoint(unsigned int x,unsigned int y);
+this is like the above except it gets a point or character
+
+(unsigned int)width=GetaWidth(void);
+(unsigned int)height=GetaHeight(void);
+(unsigned int)bpp=GetaBpp(void);
+these 3 functions are for the gui, this is NOT the emulated display mode, this is the 
+display settings of how the DoneBuffer in std_Gui.VideoRefresh() should be rendered
+(remeber the video adapter is responsible for converting characters to pixels, NOT the monitor)
+
+
+(unsigned int)width=GetWidth(void);
+(unsigned int)height=GetHeight(void);
+(unsigned int)bpp=GetBpp(void);
+(unsigned char)graphical_or_text=GetGraphical(void);
+these are what the emulation enviroment sees, graphical_or_text is 0 for text or 1 for graphical
+
+(unsigned int)size=SizeOfVideoRam(void);
+This gets the size of the video ram in bytes
+
+--responsible to call:
+std_Video is responsible for calling these functions at the appropriate time:
+void std_Gui.VideoRefresh(void *DoneBuffer,unsigned int buffer_size);
+This should be called whenever the video should be refreshed, DoneBuffer is a rendered buffer(renders text to pixels, and possibly resizes small video sizes, applies overscan..)
+buffer_size is only provided to prevent accidental overflow, GetaWidth and friends should used to determine the display settings
+
+
+--name:std_Gui
+--description: This is basically a virtual enviroment, it is responsible for telling the mouse and keyboard that it has received something. It also is 
+responsible for telling Open86 that the power button has been pushed(or reset) and anything else a user might do with the outside of the computer
+--functions:
+void VideoRefresh(void *DoneBuffer,unsigned int buffer_size);
+this function is called by std_Video whenever the video display should be changed
+for  example it is called whenever: the video is refreshed, the display mode is changed, the color pallete is changed, the fonts are changed, ect
+
+--responsible to call:
+std_Gui is responsible for calling many different things and it may call more or less than listed here.
+
+void std_Keyboard.PushedKey(unsigned int scancode);
+this should be called when a key is pressed, scancode is of type int because of things like unicode..
+
+void std_Keyboard.ReleasedKey(unsigned int scancode);
+this should be called when a key is released
+
+void std_Mouse.Changed(unsigned int x,unsigned int y,signed int scroll_moved, unsigned char click_data);
+this should be called when the mouse is moved or clicked, click_data is in the format of bits as 0(lowest bit):left click 1: middle click 2: right click
+scroll_moved is positive if it is scrolling up or negative if scrolling down, it's 0 if it wasn't moved
+note that x and y are absolute and are not always at  the same place as it says it is in the emulator
+
+void Open86.PowerButton(void);
+this should be called if the emulated power button is pushed, this will turn off the emulator
+
+void Open86.Pause(void *MyDeviceHandle);
+This will send the pause signal to every device except the on specified in the argument, this also pauses the cpu
+note: this isn't really required but rather is optional
+
+(unsigned int)error=std_Video.ResizeVideo(unsigned int width,unsigned int height);
+Not all video emulation will support this, error should be 0 if it was a success, if it isn't 0 then you should NOT change the size of the window
+because the video emulation doesn't  support it and may corrupt the display
+if error is 1 then it isn't supported at all. if error is 2 then it just isn't supported in this video mode(so you can try it in other modes)
+
+
+
+
+--name:
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</span></span>
+</code></pre>
+</body>
+</html>

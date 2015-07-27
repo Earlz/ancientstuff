@@ -1,0 +1,24 @@
+rem version 0.1
+if file exist("I:\testos\t.bmp") then delete file "I:\testos\t.bmp"
+open to write 1,"I:\testos\t.bmp"
+do
+if mouseclick()=1
+dot mousex(),mousey(),rgb(255,0,0)
+if lastx=mousex() and lasty=mousey()
+
+else
+lastx=mousex()
+lasty=mousey()
+write byte 1,mousex()
+write byte 1,mousey()
+write byte 1,4
+endif
+endif
+if mouseclick()=2
+close file 1
+end
+endif
+
+loop
+
+

@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="5" />
+	<Project>
+		<Option title="JouleOS" />
+		<Option pch_mode="0" />
+		<Option default_target="default" />
+		<Option compiler="gcc" />
+		<Option virtualFolders="" />
+		<Build>
+			<Target title="k_lib">
+				<Option output="libk_lib.a" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option host_application="tmp1.bat" />
+				<Option createDefFile="1" />
+				<Option projectResourceIncludeDirsRelation="2" />
+			</Target>
+			<Target title="default">
+				<Option output="JouleOS.bin" prefix_auto="0" extension_auto="0" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Option projectResourceIncludeDirsRelation="1" />
+				<Compiler>
+					<Add option="-w" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="libk_lib.a" />
+					<Add directory="." />
+				</Linker>
+			</Target>
+		</Build>
+		<VirtualTargets>
+			<Add alias="All" targets="k_lib;default;" />
+		</VirtualTargets>
+		<Compiler>
+			<Add option="-march=i486" />
+			<Add option="-O" />
+			<Add option="-nostdlib" />
+			<Add option="-DNDEBUG" />
+			<Add option="-DDEBUG" />
+			<Add directory="include" />
+		</Compiler>
+		<Linker>
+			<Add option="-s" />
+			<Add option="-nostartfiles -nostdlib -ffreestanding -Ttext 0x100000" />
+			<Add library="kernel\asm\asm.o" />
+			<Add directory="." />
+		</Linker>
+		<ExtraCommands>
+			<Add before="kernel\asm\build.bat" />
+			<Add after="c2f.bat" />
+			<Mode after="always" />
+		</ExtraCommands>
+		<Unit filename="C++\test1.cpp">
+			<Option compilerVar="CPP" />
+			<Option target="k_lib" />
+		</Unit>
+		<Unit filename="extras\cpuid.c">
+			<Option compilerVar="CC" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="include\EXE_support.h">
+			<Option compilerVar="" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="include\FDD.h">
+			<Option compilerVar="" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="include\TextGL.h">
+			<Option compilerVar="" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="include\_app_ints.h">
+			<Option compilerVar="" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="include\assert.h">
+			<Option compilerVar="" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="k_lib" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="include\com_ports.h">
+			<Option compilerVar="" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="include\debug.h">
+			<Option compilerVar="" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="include\dma.h">
+			<Option compilerVar="" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="include\driver_drives.h">
+			<Option compilerVar="" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="include\event_drive.h">
+			<Option compilerVar="" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="include\k_JouleOS.h">
+			<Option compilerVar="" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="include\k_misc.h">
+			<Option compilerVar="" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="include\liballoc.h">
+			<Option compilerVar="" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="include\mouse.h">
+			<Option compilerVar="" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="include\mytypes.h">
+			<Option compilerVar="" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="include\pcfs.h">
+			<Option compilerVar="" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="include\ramdisk.h">
+			<Option compilerVar="" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="include\stdio.h">
+			<Option compilerVar="" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="include\string.h">
+			<Option compilerVar="" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="include\video.h">
+			<Option compilerVar="" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="kernel\EXE_support.c">
+			<Option compilerVar="CC" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="kernel\TaskMan.c">
+			<Option compilerVar="CC" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="kernel\TextGL.c">
+			<Option compilerVar="CC" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="kernel\app_ints.c">
+			<Option compilerVar="CC" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="kernel\apps\Terminal.c">
+			<Option compilerVar="CC" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="kernel\apps\notepad.c">
+			<Option compilerVar="CC" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="kernel\asm\asm.asm">
+			<Option compilerVar="" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option weight="100" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="kernel\console.c">
+			<Option compilerVar="CC" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="kernel\dma.c">
+			<Option compilerVar="CC" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="kernel\drivers\Comports.c">
+			<Option compilerVar="CC" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="kernel\drivers\FDD.c">
+			<Option compilerVar="CC" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="kernel\drivers\_video.c">
+			<Option compilerVar="CC" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="kernel\drivers\kbd.c">
+			<Option compilerVar="CC" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="kernel\drivers\mouse.c">
+			<Option compilerVar="CC" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="kernel\drivers\ramdisk.c">
+			<Option compilerVar="CC" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="kernel\drivers\video_low.c">
+			<Option compilerVar="CC" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="kernel\event_drive.c">
+			<Option compilerVar="CC" />
+			<Option target="k_lib" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="kernel\fault_handlers.c">
+			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="kernel\gdt.c">
+			<Option compilerVar="CC" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="kernel\idt.c">
+			<Option compilerVar="CC" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="kernel\irqs.c">
+			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="kernel\logo_data.c">
+			<Option compilerVar="CC" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="kernel\mem_manager.c">
+			<Option compilerVar="CC" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="kernel\startup.c">
+			<Option compilerVar="CC" />
+			<Option weight="0" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="kernel\test.c">
+			<Option compilerVar="CC" />
+			<Option compile="0" />
+			<Option link="0" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="kernel\tss.c">
+			<Option compilerVar="CC" />
+			<Option target="default" />
+		</Unit>
+		<Unit filename="lib\_stdio.c">
+			<Option compilerVar="CC" />
+			<Option target="k_lib" />
+		</Unit>
+		<Unit filename="lib\liballoc\liballoc.c">
+			<Option compilerVar="CC" />
+			<Option target="k_lib" />
+		</Unit>
+		<Unit filename="lib\liballoc\liballoc_hooks.c">
+			<Option compilerVar="CC" />
+			<Option target="k_lib" />
+		</Unit>
+		<Unit filename="lib\malloc.c">
+			<Option compilerVar="CC" />
+			<Option target="k_lib" />
+		</Unit>
+		<Unit filename="lib\misc_stuff.c">
+			<Option compilerVar="CC" />
+			<Option target="k_lib" />
+		</Unit>
+		<Unit filename="lib\not_standard.c">
+			<Option compilerVar="CC" />
+			<Option target="k_lib" />
+		</Unit>
+		<Unit filename="lib\string.c">
+			<Option compilerVar="CC" />
+			<Option target="k_lib" />
+		</Unit>
+		<Unit filename="lib\x86.c">
+			<Option compilerVar="CC" />
+			<Option target="k_lib" />
+		</Unit>
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="default" />
+	<File name="include\Robots_AI.h" open="1" top="0" tabpos="3">
+		<Cursor position="996" topLine="10" />
+	</File>
+	<File name="include\config.h" open="1" top="0" tabpos="1">
+		<Cursor position="1237" topLine="5" />
+	</File>
+	<File name="src\LogiCode.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="4228" topLine="136" />
+	</File>
+	<File name="src\main.cpp" open="1" top="1" tabpos="4">
+		<Cursor position="7507" topLine="80" />
+	</File>
+</CodeBlocks_layout_file>

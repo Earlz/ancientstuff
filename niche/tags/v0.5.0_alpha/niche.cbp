@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="niche" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="default">
+				<Option output="\niche.exe" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="addon_installs\test2_addon.php" />
+		<Unit filename="addons\admin_addon.php" />
+		<Unit filename="addons\security.php" />
+		<Unit filename="addons\test_addon.php" />
+		<Unit filename="cache\addon_tables.php" />
+		<Unit filename="config.php" />
+		<Unit filename="index.php" />
+		<Unit filename="security.php" />
+		<Unit filename="test_theme.php" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

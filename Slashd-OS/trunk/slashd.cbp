@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Slashd-OS" />
+		<Option makefile="makefile" />
+		<Option makefile_is_custom="1" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="default">
+				<Option output="slashd.sys" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="" />
+				<Option object_output="obj\Debug\" />
+				<Option type="5" />
+				<Option compiler="gcc" />
+				<Option host_application="test_me.bat" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="make-all">
+				<Option output="slashd.sys" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="" />
+				<Option type="5" />
+				<Option compiler="gcc" />
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="boot\boot.asm">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="boot\makefile">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="kernel\kernel.asm" />
+		<Unit filename="kernel\makefile">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="make_image.asm">
+			<Option target="default" />
+		</Unit>
+		<Unit filename="makefile">
+			<Option target="default" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

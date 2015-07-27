@@ -1,0 +1,5 @@
+source\FDFS\FDFS.c(10): Error! E1055: Unable to open 'FDFS\init.c'
+source\FDFS\FDFS.c(11): Error! E1055: Unable to open 'FDFS\raw_RW.h'
+source\FDFS\FDFS.c(12): Error! E1055: Unable to open 'FDFS\oper.c'
+source\FDFS\FDFS.c(13): Error! E1055: Unable to open 'FDFS\utils.c'
+source\FDFS\FDFS.c(14): Error! E1055: Unable to open 'FDFS\index.c'

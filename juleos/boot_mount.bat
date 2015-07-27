@@ -1,0 +1,1 @@
+"F:\mirror backup\vfd\vfdwin"  /MOUNT C:\image.img /L:B:

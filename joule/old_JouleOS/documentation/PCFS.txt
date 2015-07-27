@@ -1,0 +1,123 @@
+PCFS
+Portable Custom File System
+
+well crap something happened so im having to rewrite some of this
+
+
+as far as i know this is the only filesystem that lets you pick things like name size
+
+
+
+|=byte seperator
+s=string 
+b=byte
+w=word
+d=dword
+
+bootsector [first sector]
+a free sector for easy boot sectors
+if the device is not bootable then it skips this and the first sector is pcfs info
+if the device has a variable sector size(like harddrives) then this sector is 512bytes like a floppy disk
+
+
+
+
+PCFS Info[second sector]
+
+|s;PCFS|Float; version|s(16bytes);mount-point name(this changes with partitions)|b; name size  |b;Type of storage device|b;the rest is for attributes
+
+floppy disk attributes(0x01)
+|w;heads|w;tracks|w;sectors|b;sector size in multiples of 128|b;address width in bytes(2=32 megabytes max in 512 byte sectors 
+|d;number of indexis(changes)|d;number of index entries|d; last index(address)
+
+
+
+ram disk attributes(0x02)
+|d; number of sectors|b;sector size in multiples of 128|  --address width not changeable in ramdisk always 4(see above, best is 4 for full access to all memory)
+|d;first index -for speed and simplicity|d;number of indexis(changes) -xxxx no|d;number of index entries|d; last index| 
+
+
+
+Free Sector Bitmap[third sector- varies in length]
+this sector is free sector table
+its basically just a whole sector of nothing but a bitmap tell which sectors are free
+this can allocate more than 1 sector in large storage devices
+
+
+Index Address Table[fourth sector usually but can be different depending on Free Sector Bitmap]
+copies of this:
+|depends on address width; sector index is in|b;attributes
+
+maybe use a push stack for the empty entries
+
+
+attributes byte:
+0-1:1 for full, 0 for empty, 2 for more empty entries, 3 for less emptry entries 
+
+
+
+First Index[fourth sector usually but can be different depending on Free Sector Bitmap]
+This sector actually starts the non header crap
+this is the entry template
+|s;filename depends on name size|depends on address width;sector number(linear)| -varies default: filename size:32  address width:2
+|b;mode|D -probably;file creation date|D;Last file edit date|depends on address width;file size| 
+
+this is the first entry of any index
+|depends on address width;next entry|depends on address width;previous entry|d;number of free entries in this index| rest is filled for alignment
+
+
+
+
+for directories, they have their own name table and is exactly the same entry
+
+
+
+
+
+
+
+mode byte:
+0:empty(the entry) or not, 1 for not
+1:directory or file
+2:read only
+3:system
+4:hidden
+5:ready to be archived
+6:mirrored??
+7:no use yet
+
+
+
+date dword:  
+-meh figure out this later
+0-4:day
+5-8:month
+10-14 :year -assumes it year 2000 and that this won't be around in 2032
+                             -17-24:second_time -highest bit is waste
+17-22:minute_time -highest bit is waste
+25-29:hour_time -its 24 hour, so people using 12 hour time frame need to convert this
+30-31:not used and only kept so it would be symetrical
+
+
+date dword:
+0-5:day
+6-9:month
+10-16:year -assumes it year 2000 and that this won't be around in 2065
+                             -17-24:second_time -highest bit is waste
+25-32:minute_time -highest bit is waste
+24-29:hour_time -its 24 hour, so people using 12 hour time frame need to convert this
+30-31:not used and only kept so it would be symetrical
+
+
+another idea:
+have the name in the first sector of the file therefor having a size only limited by the OS -NO!! then when you want to load the file name list for browsing you would have to load many sectors
+
+
+idea3:
+have a implementation design for instead of allocating sectors from first to last, allocate data from last to first and allocate index and such from first to last
+this way everything is in a straight line
+
+
+
+path format:
+

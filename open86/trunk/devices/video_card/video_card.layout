@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="default" />
+	<File name="font.c" open="0" top="0" tabpos="0">
+		<Cursor position="28570" topLine="0" />
+	</File>
+	<File name="main.c" open="0" top="0" tabpos="1">
+		<Cursor position="2481" topLine="88" />
+	</File>
+	<File name="makefile.bsd" open="0" top="0" tabpos="2">
+		<Cursor position="365" topLine="0" />
+	</File>
+	<File name="makefile.nix" open="0" top="0" tabpos="3">
+		<Cursor position="118" topLine="0" />
+	</File>
+	<File name="makefile.win32" open="0" top="0" tabpos="2">
+		<Cursor position="91" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>

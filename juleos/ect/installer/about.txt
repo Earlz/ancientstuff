@@ -1,0 +1,3 @@
+bootsec.boot currently will onyl read 10 sectors(we dont need that much but to leave room for expansion as it dont hurt anything) and can be recompiled to include less or more
+will attempt to load a file(the kernel) at sector 2
+This is done like this due to the problem trying to read a file thru the fat filesystem so we will use raw mode instead

@@ -1,0 +1,107 @@
+This is a very informal design document for Slashd-OS.
+
+I am basically writing this just to gather my thoughts on everything and such...
+
+
+Ok, starting at boot.
+The bootsector will be 1 stage, but will use the first 4 sectors of the floppy. 
+The current plan is to use a slightly modified version of StoopidFS. Of course, I never actually made a full design doc of it either, but never the less...
+
+What the bootsector should do.
+Load rest of bootsector.
+setup any hardware needed(currently, none)
+load disk driver(only from disk, into 0x2000, put size in 0x1000:0 [2 bytes])
+load FS driver(only from disk, into 0x3000, put size in 0x1000:2 [2 bytes])
+load kernel(into 0x9000, put size in 0x1000:4)
+far jmp into kernel.
+end bootsector.
+
+Proposed Memory Maps: (all in hex)
+memory map #1:
+0:0-0:755 -used by BIOS
+0:755-1000:0 -reserved by kernel.(undecided stuff...)
+1000:0-2000:0 -used by bootsector; after that, swap memory. Memory that is swapped into and out of disk as requested by programs, or can be general free memory area. This memory is safe to use after telling kernel how much of this memory will be used. (defaults to 0 for speed purposes)
+2000:0-3000:8000 -used by current executing program.
+3000:8000-8000:8000 -stores packed loaded programs.
+8000:8000-9000:0 -driver stuff.
+9000:0-A000:0 -All for kernel code and internal kernel data.
+A000:0-C000:0 -device RAM (should not be accessed from programs or even kernel, only from drivers)
+D000:0-F000:FFFF -ROM
+
+memory map #2:
+0:0-0:755 -used by BIOS
+0:755-1000:0 -driver tables and such.
+1000:0-2000:0 -used by bootsector, after that is for programs loading.
+2000:0-3000:0 -used for >64kb programs 
+3000:0-4000:0 -used for >128kb programs -also used for driver swap-in
+2000-4000 is swappable memory. 
+5000:0-8000:0 -packed background programs. (these are copied out of this area, and into 2000:0 unpacked whenever they get a share of CPU time)
+8000:0-9000:0 -driver constant "keep alive"
+
+
+
+
+
+
+StoopidFS(v2):
+StoopidFS is designed to be a very easy to implement FS.
+It is, by design, a slow FS, but for hobby OS, it works..
+The way files(and directories) are arranged in the filesystem is sequentially. No on-disk table is made.
+This means that to find a file at the end of the disk, all files must first be scanned at the first of the disk. 
+Names are limited to 255 bytes(254 with null termination).
+
+(0xE9 for rel16 jmp)
+21
+files are stored in a sector like so:
+type(0x0F for file)[1]
+sectors used[4]
+file size[4]
+attributes[2]
+name size[1]
+directory entry [4]
+name(0 terminated) [name size]
+data [data size until sector filled]
+next sector:
+data..
+
+
+
+directories are stored in a table starting at a specified sector
+note that directory entry 0 is reserved for /
+first sector of directories:
+type(0x1D for first directory sector) [1]
+number of directories [4]
+next directory sector [4]
+directory entries...
+
+after 1st sector of directories:
+type(0xCD)[1]
+next directory sector[4]
+directory entries...
+
+
+directory entry format:
+directory name size [1]
+sub directory[4]
+number of files[4]
+directory name [name size]
+
+
+
+for the bootsector the following is used:
+type/jmp(0xE9 for bootsector) [1]
+ignored bytes(put jmp address here)[2]
+device size[4]
+directory start sector[2]
+file start sector[2]
+
+
+
+
+
+Device Drivers:
+
+
+
+
+

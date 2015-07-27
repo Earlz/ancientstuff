@@ -1,0 +1,50 @@
+
+config_interface: textconfig
+display_library: win32
+megs: 32
+
+romimage: file=$BXSHARE/BIOS-bochs-latest 
+cpu: count=1, ips=100000, reset_on_triple_fault=0
+vgaromimage: $BXSHARE/VGABIOS-lgpl-latest
+vga: extension=vbe
+boot: floppy
+floppya: 1_44=slashd_image.img, status=inserted
+#floppyb: 1_44=X:, status=inserted
+ata0: enabled=0
+ata1: enabled=0
+ata2: enabled=0
+ata3: enabled=0
+
+boot: floppy
+com1: enabled=1, mode=file, dev=out_com.txt
+floppy_bootsig_check: disabled=0
+
+
+usb1: enabled=0
+vga_update_interval: 50000
+keyboard_serial_delay: 2000
+keyboard_paste_delay: 10000
+floppy_command_delay: 100
+#ata0-master: type=disk, mode=flat, path="win1-80.vhd", cylinders=162, heads=16, spt=63
+#ata0-master: type=disk, path="bochs_hdd10mb.vhd", mode=growing, cylinders=10, heads=16,spt=63
+#ata0: enabled=1, ioaddr1=0x1f0, ioaddr2=0x3f0, irq=14
+#magic_break: enabled=1
+
+mouse: enabled=0
+private_colormap: enabled=0
+i440fxsupport: enabled=0
+clock: sync=realtime, time0=local
+log: bochsout.txt
+debugger_log: debugout.txt
+
+logprefix: %t%e%d
+debugger_log: -
+panic: action=ask
+error: action=ask
+info: action=report
+debug: action=ignore
+pass: action=report
+keyboard_mapping: enabled=0, map=
+keyboard_type: mf
+user_shortcut: keys=none
+

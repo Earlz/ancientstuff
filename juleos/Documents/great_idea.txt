@@ -1,0 +1,38 @@
+FDFS rough design doc, design 2
+
+Basically the index is what controls nearly everything, without an index you have no filenames, no distigushment between files and directories, no nothing, just a raw file system with a few extra bytes here and there.
+the index has "entries" which are just 32byte segments and due to the design of it there is no exceptions in the whole sector containing the index such as special paremeters are contained in the first or last(yet to be decided) entry so everything is still symetrical and no uneven division 
+
+in a standard file entry is: (reduce to 16?)
+the name of the file(13bytes),1  the cluster address(absolute) containing the first sector of the file(1 word/2bytes), and a byte saying if its a directory or file(1byte, 0 unused entry,1 file, 2 directory)
+
+in the special entry(contains media and index info): (this is only for the first index, the second index, third.. are slightly different)
+the size of the disk(1dword,in bytes), the version of FDFS(2 bytes), the last index number(updated when an index is added,1 byte), the cluster address of the last index(1 word), the first free entry(updated with any standard file operation,1 word),the number of index's(1 word),... at the 15th byte, next index cluster address(0 if last index)(1 word)
+ 
+
+
+
+when fdfs volumes are mounted they should:
+get the number of index's, the cluster address of each, the first free entry, cache the index into its own memory segment/area
+
+
+currently directories are our problem due to the way files must be "inside" of them or at least to where it looks that way.
+there are 2 methods thought of, and each with there problems, so far.
+
+1:
+make the index responsible for directory structures by in the directory entry it "jump" to files"!(didnt think of that")
+such as it would basically list the entry of the file in the cluster the directory is indexed too
+
+this is a bit rough
+ok so when u create a directory it is basically like a normal file except for the last byte, so then when u browse a directory the directory cluster has its own index to the index and will point to where the file is located in the index
+and if u want to add a file then u add it to the index then u add a pointer to the index entry and if u want to add to a file its the exact same and if u want to delete the file u delete the pointer and erase the index(actual) if u get over <number>(however many i could fit in a cluster) then u just add a few bytes at the end just as you would append a file
+so far i can not see a problem besides it maybe being a bit slow
+and adding a directory is basically like adding a file
+
+ 
+so basically a directory acts a lot like a special file filtered out by the fs
+
+or a directory could act like a second index for more speed although that might cause some sky rockets in memory use and disk use(512 bytes gets you 16 names) although both ways i only see slight performance draw bakcs
+
+
+_____________________read^

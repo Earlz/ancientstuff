@@ -1,0 +1,772 @@
+# depslib dependency file v1.0
+1158367241 d:\jouleos _svn\c++\test1.cpp
+	<stdio.h>
+	<k_JouleOS.h>
+
+1158378837 d:\jouleos _svn\include\stdio.h
+
+1160921239 d:\jouleos _svn\include\k_jouleos.h
+	<mytypes.h>
+	<video.h>
+	<mytypes.h>
+
+1158367209 d:\jouleos _svn\include\mytypes.h
+
+1158466822 d:\jouleos _svn\include\video.h
+	<mytypes.h>
+
+1158380065 d:\jouleos _svn\kernel\event_drive.c
+	<mytypes.h>
+	<event_drive.h>
+	<mouse.h>
+
+1158367209 d:\jouleos _svn\include\event_drive.h
+	<mytypes.h>
+
+1158367209 d:\jouleos _svn\include\mouse.h
+
+1159708017 d:\jouleos _svn\lib\_stdio.c
+	"k_JouleOS.h"
+	<video.h>
+
+1158367228 d:\jouleos _svn\lib\liballoc\liballoc.c
+	<liballoc.h>
+	<stdio.h>
+	<stdlib.h>
+
+1158367209 d:\jouleos _svn\include\liballoc.h
+
+1160889423 d:\jouleos _svn\lib\liballoc\liballoc_hooks.c
+
+1158367238 d:\jouleos _svn\lib\malloc.c
+
+1158367238 d:\jouleos _svn\lib\misc_stuff.c
+	<k_JouleOS.h>
+
+1158378879 d:\jouleos _svn\lib\string.c
+
+1159637073 d:\jouleos _svn\lib\x86.c
+
+1160921368 d:\jouleos _svn\kernel\startup.c
+	"k_defines.c"
+	<stdio.h>
+	<k_misc.h>
+	<k_JouleOS.h>
+	<string.h>
+	<video.h>
+	<FDD.h>
+
+1158367203 d:\jouleos _svn\kernel\k_defines.c
+
+1158367209 d:\jouleos _svn\include\k_misc.h
+
+1158367209 d:\jouleos _svn\include\string.h
+
+1158367209 d:\jouleos _svn\include\fdd.h
+	"mytypes.h"
+	<k_JouleOS.h>
+
+1160921368 d:\jouleos _svn\kernel\taskman.c
+	<k_JouleOS.h>
+	<stdio.h>
+
+1158367203 d:\jouleos _svn\kernel\textgl.c
+	<TextGL.h>
+
+1158367209 d:\jouleos _svn\include\textgl.h
+
+1158461651 d:\jouleos _svn\kernel\app_ints.c
+	<k_JouleOS.h>
+	<stdio.h>
+	<event_drive.h>
+
+1158367186 d:\jouleos _svn\kernel\apps\terminal.c
+	<mytypes.h>
+	<event_drive.h>
+	<video.h>
+	<stdio.h>
+
+1158367186 d:\jouleos _svn\kernel\apps\notepad.c
+	<k_JouleOS.h>
+
+1160837027 d:\jouleos _svn\kernel\console.c
+	<k_misc.h>
+	<stdio.h>
+	<string.h>
+	<k_JouleOS.h>
+	<liballoc.h>
+	<TextGL.h>
+	<assert.h>
+	"test.c"
+
+1158367209 d:\jouleos _svn\include\assert.h
+
+1160885829 d:\jouleos _svn\kernel\test.c
+	<ramdisk.h>
+	<debug.h>
+	<event_drive.h>
+	<video.h>
+	<k_JouleOS.h>
+
+1159719994 d:\jouleos _svn\include\ramdisk.h
+	<mytypes.h>
+
+1158367209 d:\jouleos _svn\include\debug.h
+
+1158367203 d:\jouleos _svn\kernel\dma.c
+	"mytypes.h"
+	"dma.h"
+
+1158367209 d:\jouleos _svn\include\dma.h
+
+1158376879 d:\jouleos _svn\kernel\drivers\comports.c
+	<com_ports.h>
+	<k_JouleOS.h>
+	<mytypes.h>
+	<stdio.h>
+	<video.h>
+	<debug.h>
+	<event_drive.h>
+
+1158367209 d:\jouleos _svn\include\com_ports.h
+	<mytypes.h>
+
+1158421709 d:\jouleos _svn\kernel\drivers\fdd.c
+	<fdd.h>
+	<k_JouleOS.h>
+	<mytypes.h>
+	<k_misc.h>
+	<debug.h>
+	<stdio.h>
+
+1158415146 d:\jouleos _svn\kernel\drivers\kbd.c
+	<k_JouleOS.h>
+	<event_drive.h>
+
+1158376972 d:\jouleos _svn\kernel\drivers\mouse.c
+	<k_JouleOS.h>
+	<mytypes.h>
+	<event_drive.h>
+	<mouse.h>
+
+1159727561 d:\jouleos _svn\kernel\drivers\ramdisk.c
+	<ramdisk.h>
+	<stdio.h>
+	<string.h>
+	<mytypes.h>
+	<driver_drives.h>
+
+1156108245 d:\jouleos _svn\kernel\drivers\video.c
+	<video.h>
+
+1158367203 d:\jouleos _svn\kernel\drivers\video_low.c
+	<video.h>
+
+1159660842 d:\jouleos _svn\kernel\gdt.c
+
+1160920183 d:\jouleos _svn\kernel\idt.c
+	<k_misc.h>
+	<string.h>
+	<video.h>
+	<k_JouleOS.h>
+	<TextGL.h>
+	<mouse.h>
+	<stdio.h>
+	"fault_handlers.c"
+	"irqs.c"
+
+1158367203 d:\jouleos _svn\kernel\logo_data.c
+
+1158367203 d:\jouleos _svn\kernel\mem_manager.c
+
+1158367203 d:\jouleos _svn\kernel\exe_support.c
+
+1158379851 d:\jouleos _svn\kernel\tss.c
+	<k_JouleOS.h>
+	<debug.h>
+	<stdio.h>
+
+1156108245 d:\jouleos _svn\kernel\windows.c
+	<video.h>
+
+1157177695 d:\jouleos _svn\kernel\app_ints\_video.c
+
+1160833222 d:\jouleos _svn\kernel\drivers\_video.c
+	<mytypes.h>
+
+1157264968 d:\jouleos _svn\lib\fopen- testers\fopen.c
+
+1158367238 d:\jouleos _svn\lib\not_standard.c
+	<stdio.h>
+	<mytypes.h>
+
+1158367225 d:\jouleos _svn\extras\cpuid.c
+	<stdio.h>
+	<video.h>
+
+1160881330 d:\jouleos _svn\kernel\fault_handlers.c
+
+1158461589 d:\jouleos _svn\kernel\irqs.c
+
+1160530593 f:\jouleos_svn\c++\test1.cpp
+	<stdio.h>
+	<k_JouleOS.h>
+
+1162429720 f:\jouleos_svn\include\stdio.h
+
+1162429720 f:\jouleos_svn\include\k_jouleos.h
+	<mytypes.h>
+	<video.h>
+	<mytypes.h>
+
+1162429720 f:\jouleos_svn\include\mytypes.h
+
+1162429720 f:\jouleos_svn\include\video.h
+	<mytypes.h>
+
+1160530574 f:\jouleos_svn\kernel\event_drive.c
+	<mytypes.h>
+	<event_drive.h>
+	<mouse.h>
+
+1162429720 f:\jouleos_svn\include\event_drive.h
+	<mytypes.h>
+
+1162429720 f:\jouleos_svn\include\mouse.h
+
+1160530593 f:\jouleos_svn\lib\_stdio.c
+	"k_JouleOS.h"
+	<video.h>
+
+1160530583 f:\jouleos_svn\lib\liballoc\liballoc.c
+	<liballoc.h>
+	<stdio.h>
+	<stdlib.h>
+
+1162429720 f:\jouleos_svn\include\liballoc.h
+
+1161142242 f:\jouleos_svn\lib\liballoc\liballoc_hooks.c
+
+1160530593 f:\jouleos_svn\lib\malloc.c
+
+1160530593 f:\jouleos_svn\lib\misc_stuff.c
+	<k_JouleOS.h>
+
+1160530593 f:\jouleos_svn\lib\not_standard.c
+	<stdio.h>
+	<mytypes.h>
+
+1160530593 f:\jouleos_svn\lib\string.c
+
+1160530593 f:\jouleos_svn\lib\x86.c
+
+1161142230 f:\jouleos_svn\kernel\startup.c
+	"k_defines.c"
+	<stdio.h>
+	<k_misc.h>
+	<k_JouleOS.h>
+	<string.h>
+	<video.h>
+	<FDD.h>
+
+1160530574 f:\jouleos_svn\kernel\k_defines.c
+
+1162429720 f:\jouleos_svn\include\k_misc.h
+
+1162429720 f:\jouleos_svn\include\string.h
+
+1162429720 f:\jouleos_svn\include\fdd.h
+	"mytypes.h"
+	<k_JouleOS.h>
+
+1160530574 f:\jouleos_svn\kernel\exe_support.c
+
+1161548988 f:\jouleos_svn\kernel\taskman.c
+	<k_JouleOS.h>
+	<stdio.h>
+	<debug.h>
+
+1160530574 f:\jouleos_svn\kernel\textgl.c
+	<TextGL.h>
+
+1162429720 f:\jouleos_svn\include\textgl.h
+
+1161539413 f:\jouleos_svn\kernel\app_ints.c
+	<k_JouleOS.h>
+	<stdio.h>
+	<event_drive.h>
+
+1160530557 f:\jouleos_svn\kernel\apps\terminal.c
+	<mytypes.h>
+	<event_drive.h>
+	<video.h>
+	<stdio.h>
+
+1160530557 f:\jouleos_svn\kernel\apps\notepad.c
+	<k_JouleOS.h>
+
+1161142230 f:\jouleos_svn\kernel\console.c
+	<k_misc.h>
+	<stdio.h>
+	<string.h>
+	<k_JouleOS.h>
+	<liballoc.h>
+	<TextGL.h>
+	<assert.h>
+	"test.c"
+
+1162429720 f:\jouleos_svn\include\assert.h
+
+1166234160 f:\jouleos_svn\kernel\test.c
+	<ramdisk.h>
+	<debug.h>
+	<event_drive.h>
+	<video.h>
+	<k_JouleOS.h>
+
+1162429720 f:\jouleos_svn\include\ramdisk.h
+	<mytypes.h>
+
+1162429720 f:\jouleos_svn\include\debug.h
+
+1160530573 f:\jouleos_svn\kernel\dma.c
+	"mytypes.h"
+	"dma.h"
+
+1162429720 f:\jouleos_svn\include\dma.h
+
+1160530573 f:\jouleos_svn\kernel\drivers\comports.c
+	<com_ports.h>
+	<k_JouleOS.h>
+	<mytypes.h>
+	<stdio.h>
+	<video.h>
+	<debug.h>
+	<event_drive.h>
+
+1162429720 f:\jouleos_svn\include\com_ports.h
+	<mytypes.h>
+
+1160530573 f:\jouleos_svn\kernel\drivers\fdd.c
+	<fdd.h>
+	<k_JouleOS.h>
+	<mytypes.h>
+	<k_misc.h>
+	<debug.h>
+	<stdio.h>
+
+1161142230 f:\jouleos_svn\kernel\drivers\_video.c
+	<mytypes.h>
+
+1161142230 f:\jouleos_svn\kernel\drivers\kbd.c
+	<k_JouleOS.h>
+	<event_drive.h>
+
+1160530573 f:\jouleos_svn\kernel\drivers\mouse.c
+	<k_JouleOS.h>
+	<mytypes.h>
+	<event_drive.h>
+	<mouse.h>
+
+1161142230 f:\jouleos_svn\kernel\drivers\ramdisk.c
+	<ramdisk.h>
+	<stdio.h>
+	<string.h>
+	<mytypes.h>
+	<driver_drives.h>
+
+1157937583 f:\jouleos_svn\kernel\drivers\video.c
+	<video.h>
+
+1160530573 f:\jouleos_svn\kernel\drivers\video_low.c
+	<video.h>
+
+1160530574 f:\jouleos_svn\kernel\gdt.c
+
+1161228813 f:\jouleos_svn\kernel\idt.c
+	<k_misc.h>
+	<string.h>
+	<video.h>
+	<k_JouleOS.h>
+	<TextGL.h>
+	<mouse.h>
+	<stdio.h>
+	"fault_handlers.c"
+	"irqs.c"
+
+1162429714 f:\jouleos_svn\kernel\fault_handlers.c
+
+1162429714 f:\jouleos_svn\kernel\irqs.c
+
+1160530574 f:\jouleos_svn\kernel\logo_data.c
+
+1160530574 f:\jouleos_svn\kernel\mem_manager.c
+
+1160530581 f:\jouleos_svn\extras\cpuid.c
+	<stdio.h>
+	<video.h>
+
+1160530574 f:\jouleos_svn\kernel\tss.c
+	<k_JouleOS.h>
+	<debug.h>
+	<stdio.h>
+
+1157939590 f:\jouleos_svn\include\_video.h
+	<mytypes.h>
+
+1159727561 d:\jouleos _svn\include\driver_drives.h
+	<mytypes.h>
+
+1162002852 d:\jouleos_svn\c++\test1.cpp
+	<stdio.h>
+	<k_JouleOS.h>
+
+1162002822 d:\jouleos_svn\include\stdio.h
+
+1162044617 d:\jouleos_svn\include\k_jouleos.h
+	<mytypes.h>
+	<video.h>
+	<mytypes.h>
+
+1162002822 d:\jouleos_svn\include\mytypes.h
+
+1162018464 d:\jouleos_svn\include\video.h
+	<mytypes.h>
+
+1162017116 d:\jouleos_svn\kernel\event_drive.c
+	<mytypes.h>
+	<event_drive.h>
+	<mouse.h>
+
+1162002822 d:\jouleos_svn\include\event_drive.h
+	<mytypes.h>
+
+1162002822 d:\jouleos_svn\include\mouse.h
+
+1162002852 d:\jouleos_svn\lib\_stdio.c
+	"k_JouleOS.h"
+	<video.h>
+
+1162002842 d:\jouleos_svn\lib\liballoc\liballoc.c
+	<liballoc.h>
+	<stdio.h>
+	<stdlib.h>
+
+1162002822 d:\jouleos_svn\include\liballoc.h
+
+1162002842 d:\jouleos_svn\lib\liballoc\liballoc_hooks.c
+
+1162002852 d:\jouleos_svn\lib\malloc.c
+
+1162002852 d:\jouleos_svn\lib\misc_stuff.c
+	<k_JouleOS.h>
+
+1162002852 d:\jouleos_svn\lib\not_standard.c
+	<stdio.h>
+	<mytypes.h>
+
+1162002852 d:\jouleos_svn\lib\string.c
+
+1162002852 d:\jouleos_svn\lib\x86.c
+
+1162002814 d:\jouleos_svn\kernel\startup.c
+	"k_defines.c"
+	<stdio.h>
+	<k_misc.h>
+	<k_JouleOS.h>
+	<string.h>
+	<video.h>
+	<FDD.h>
+
+1162002814 d:\jouleos_svn\kernel\k_defines.c
+
+1162002822 d:\jouleos_svn\include\k_misc.h
+
+1162002822 d:\jouleos_svn\include\string.h
+
+1162002822 d:\jouleos_svn\include\fdd.h
+	"mytypes.h"
+	<k_JouleOS.h>
+
+1162002814 d:\jouleos_svn\kernel\exe_support.c
+
+1162007476 d:\jouleos_svn\kernel\taskman.c
+	<k_JouleOS.h>
+	<stdio.h>
+	<debug.h>
+
+1162002814 d:\jouleos_svn\kernel\textgl.c
+	<TextGL.h>
+
+1162002822 d:\jouleos_svn\include\textgl.h
+
+1162002814 d:\jouleos_svn\kernel\app_ints.c
+	<k_JouleOS.h>
+	<stdio.h>
+	<event_drive.h>
+
+1162002798 d:\jouleos_svn\kernel\apps\terminal.c
+	<mytypes.h>
+	<event_drive.h>
+	<video.h>
+	<stdio.h>
+
+1162002798 d:\jouleos_svn\kernel\apps\notepad.c
+	<k_JouleOS.h>
+
+1162002814 d:\jouleos_svn\kernel\console.c
+	<k_misc.h>
+	<stdio.h>
+	<string.h>
+	<k_JouleOS.h>
+	<liballoc.h>
+	<TextGL.h>
+	<assert.h>
+	"test.c"
+
+1162002822 d:\jouleos_svn\include\assert.h
+
+1162017805 d:\jouleos_svn\kernel\test.c
+	<ramdisk.h>
+	<debug.h>
+	<event_drive.h>
+	<video.h>
+	<k_JouleOS.h>
+
+1162002822 d:\jouleos_svn\include\ramdisk.h
+	<mytypes.h>
+
+1162002822 d:\jouleos_svn\include\debug.h
+
+1162002813 d:\jouleos_svn\kernel\dma.c
+	"mytypes.h"
+	"dma.h"
+
+1162002822 d:\jouleos_svn\include\dma.h
+
+1162017917 d:\jouleos_svn\kernel\drivers\comports.c
+	<com_ports.h>
+	<k_JouleOS.h>
+	<mytypes.h>
+	<stdio.h>
+	<video.h>
+	<debug.h>
+	<event_drive.h>
+
+1162002822 d:\jouleos_svn\include\com_ports.h
+	<mytypes.h>
+
+1162002813 d:\jouleos_svn\kernel\drivers\fdd.c
+	<fdd.h>
+	<k_JouleOS.h>
+	<mytypes.h>
+	<k_misc.h>
+	<debug.h>
+	<stdio.h>
+
+1162018484 d:\jouleos_svn\kernel\drivers\_video.c
+	<mytypes.h>
+	<video.h>
+
+1162002813 d:\jouleos_svn\kernel\drivers\kbd.c
+	<k_JouleOS.h>
+	<event_drive.h>
+
+1162017805 d:\jouleos_svn\kernel\drivers\mouse.c
+	<k_JouleOS.h>
+	<mytypes.h>
+	<event_drive.h>
+	<mouse.h>
+
+1162002813 d:\jouleos_svn\kernel\drivers\ramdisk.c
+	<ramdisk.h>
+	<stdio.h>
+	<string.h>
+	<mytypes.h>
+	<driver_drives.h>
+
+1162002822 d:\jouleos_svn\include\driver_drives.h
+	<mytypes.h>
+
+1162002813 d:\jouleos_svn\kernel\drivers\video_low.c
+	<video.h>
+
+1162002814 d:\jouleos_svn\kernel\gdt.c
+
+1162002814 d:\jouleos_svn\kernel\idt.c
+	<k_misc.h>
+	<string.h>
+	<video.h>
+	<k_JouleOS.h>
+	<TextGL.h>
+	<mouse.h>
+	<stdio.h>
+	"fault_handlers.c"
+	"irqs.c"
+
+1162002814 d:\jouleos_svn\kernel\fault_handlers.c
+
+1162002814 d:\jouleos_svn\kernel\irqs.c
+
+1162002814 d:\jouleos_svn\kernel\logo_data.c
+
+1162002814 d:\jouleos_svn\kernel\mem_manager.c
+
+1162005998 d:\jouleos_svn\extras\cpuid.c
+	<stdio.h>
+	<video.h>
+
+1162002814 d:\jouleos_svn\kernel\tss.c
+	<k_JouleOS.h>
+	<debug.h>
+	<stdio.h>
+
+1162429720 f:\jouleos_svn\include\driver_drives.h
+	<mytypes.h>
+
+1160526983 source:f:\jouleos_svn\lib\liballoc\liballoc.c
+	<liballoc.h>
+	<stdio.h>
+	<stdlib.h>
+
+1161138642 source:f:\jouleos_svn\lib\liballoc\liballoc_hooks.c
+
+1160526974 source:f:\jouleos_svn\kernel\exe_support.c
+
+1162429714 source:f:\jouleos_svn\kernel\event_drive.c
+	<mytypes.h>
+	<event_drive.h>
+	<mouse.h>
+
+1162429730 source:f:\jouleos_svn\c++\test1.cpp
+	<stdio.h>
+	<k_JouleOS.h>
+
+1162429724 source:f:\jouleos_svn\lib\_stdio.c
+	"k_JouleOS.h"
+	<video.h>
+
+1162429724 source:f:\jouleos_svn\lib\malloc.c
+
+1162429724 source:f:\jouleos_svn\lib\misc_stuff.c
+	<k_JouleOS.h>
+
+1162429724 source:f:\jouleos_svn\lib\not_standard.c
+	<stdio.h>
+	<mytypes.h>
+
+1162429724 source:f:\jouleos_svn\lib\string.c
+
+1162429724 source:f:\jouleos_svn\lib\x86.c
+
+1166064369 source:f:\jouleos_svn\kernel\startup.c
+	<stdio.h>
+	<k_misc.h>
+	<k_JouleOS.h>
+	<string.h>
+	<video.h>
+	<FDD.h>
+
+1162429714 source:f:\jouleos_svn\kernel\taskman.c
+	<k_JouleOS.h>
+	<stdio.h>
+	<debug.h>
+
+1162429714 source:f:\jouleos_svn\kernel\textgl.c
+	<TextGL.h>
+
+1166064072 source:f:\jouleos_svn\kernel\app_ints.c
+	<k_JouleOS.h>
+	<stdio.h>
+	<event_drive.h>
+
+1162429705 source:f:\jouleos_svn\kernel\apps\terminal.c
+	<mytypes.h>
+	<event_drive.h>
+	<video.h>
+	<stdio.h>
+
+1162429705 source:f:\jouleos_svn\kernel\apps\notepad.c
+	<k_JouleOS.h>
+
+1162429714 source:f:\jouleos_svn\kernel\console.c
+	<k_misc.h>
+	<stdio.h>
+	<string.h>
+	<k_JouleOS.h>
+	<liballoc.h>
+	<TextGL.h>
+	<assert.h>
+	"test.c"
+
+1162429714 source:f:\jouleos_svn\kernel\dma.c
+	"mytypes.h"
+	"dma.h"
+
+1162429714 source:f:\jouleos_svn\kernel\drivers\comports.c
+	<com_ports.h>
+	<k_JouleOS.h>
+	<mytypes.h>
+	<stdio.h>
+	<video.h>
+	<debug.h>
+	<event_drive.h>
+
+1162429714 source:f:\jouleos_svn\kernel\drivers\fdd.c
+	<fdd.h>
+	<k_JouleOS.h>
+	<mytypes.h>
+	<k_misc.h>
+	<debug.h>
+	<stdio.h>
+
+1162429714 source:f:\jouleos_svn\kernel\drivers\_video.c
+	<mytypes.h>
+	<video.h>
+
+1162429714 source:f:\jouleos_svn\kernel\drivers\kbd.c
+	<k_JouleOS.h>
+	<event_drive.h>
+
+1162429714 source:f:\jouleos_svn\kernel\drivers\mouse.c
+	<k_JouleOS.h>
+	<mytypes.h>
+	<event_drive.h>
+	<mouse.h>
+
+1162429714 source:f:\jouleos_svn\kernel\drivers\ramdisk.c
+	<ramdisk.h>
+	<stdio.h>
+	<string.h>
+	<mytypes.h>
+	<driver_drives.h>
+
+1162429714 source:f:\jouleos_svn\kernel\drivers\video_low.c
+	<video.h>
+
+1162429714 source:f:\jouleos_svn\kernel\gdt.c
+
+1162429714 source:f:\jouleos_svn\kernel\idt.c
+	<k_misc.h>
+	<string.h>
+	<video.h>
+	<k_JouleOS.h>
+	<TextGL.h>
+	<mouse.h>
+	<stdio.h>
+	"fault_handlers.c"
+	"irqs.c"
+
+1162429714 source:f:\jouleos_svn\kernel\logo_data.c
+
+1162429714 source:f:\jouleos_svn\kernel\mem_manager.c
+
+1162429730 source:f:\jouleos_svn\extras\cpuid.c
+	<stdio.h>
+	<video.h>
+
+1162429714 source:f:\jouleos_svn\kernel\tss.c
+	<k_JouleOS.h>
+	<debug.h>
+	<stdio.h>
+

@@ -1,0 +1,24 @@
+time:
+to get time working you would divide the bios_ticks by 18.2 and then divide by 60 to get the hours then divide by 12 to get the time, after decimal point is minutes, in the 100ths is seconds or use modulus and get the remainder to keep from dealing with floating point crap
+
+maybe this will help
+                Hour      = Clock / 65543 (1007h)
+                Remainder = Clock MOD 65543
+
+                Minutes   = Remainder / 1092 (444h)
+                Remainder = Remainder MOD 1092
+
+                Second    = Remainder / 18.21
+                Remainder = Remainder MOD 18.21
+
+                Hundredths = CINT(Remainder * 100)
+
+
+Int 08h System Timer:
+replace the standard bios int with a custom 1 and maybe multitasking just got
+a new concept or use the alarm.
+
+
+just about everything including permissions, protection, and priviledges are possible by replacing many of the interrupts, although switching to protected mode will get you out of it err nvm even int 02h will work for that
+
+

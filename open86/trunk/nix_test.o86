@@ -1,0 +1,2 @@
+load_bin_file:"tester.bin"
+load_device:"devices/sdl_video/86Gui.so

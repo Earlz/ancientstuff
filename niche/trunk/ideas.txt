@@ -1,0 +1,48 @@
+Ok, for security, EVERY .php file should have a include at the first line, like this
+<?php include "security.php";?>
+This is a very small, but important file...it will check if a variable is defined/set and if it isn't, then the interpretor is immediatly stopped. This is so no one can just goto http://mywebsite.com/niche/addon/my_addon.php  and have access..
+
+An addon is basically just a php script with a few things to setup, and a few restrictions...
+
+For setup, a very simple template would be as follows:
+<?php
+include "security.php"; //in EVERY FILE NO MATTER WHAT!!
+switch($niche_action){
+  case "init":
+   //do initialization stuff here..
+   $name="My Addon"; //this is the name of addon
+   $link_name="Hello World"; //this is the text of the link fo ryour addon
+   $page_title="My Addon Page"; //this is the title used for "requested" page
+   $version=1.0; //this should be a float, and is the version of your addon
+  break;
+  case "setup":
+  //do the initial setup, this is only done the first time the script is run!
+  break;
+  case "requested":
+  //This is done when a link for your addon is requested by the navigation link
+  echo 'Hello World!!<br>'; //show a small example page
+  echo '<a href="'.GenerateLink("My Addon","test_link").'">My Test Page</a>'; //also, GenerateLink can take an optional argument option, like GenerateLink("My Addon,"test_link",$my_arg_array);
+  break;
+  case "test_link": //this will be called when clicking on the link made by GenerateLink()
+  echo 'hai';
+  break;
+  case "exit":
+  //do any ending things here...
+  break;
+  default:
+  echo 'Undefined action!!<br>';
+?>
+
+--end--
+
+See, this really is simple, but powerful..I'm really not sure how I will pull off all of it while keeping script exec time under 1second though...
+
+Restrictions:
+You should not use stylesheets, though inline styles can be done..
+<head> and <html> can not be used, can not be set, except for in the initialization(so, you can only have one title for all pages)
+
+
+
+$_PUT will probably be used for page navigation, as it will make it easy to bookmark
+
+Cookies will be used, so that there is no relying on .htaccess...this hting is suppose to depend on nothing but PHP...(though, addons can rely on anything they want..)

@@ -1,0 +1,85 @@
+the format of the ExLib loader file is:
+it is space and tab sensitive
+# is comments
+
+#start of the file
+#really this is just a simple list of files
+#it is the devices responsibilty to know what it is
+#just type it in like this
+MyDevice.dll
+MyOtherDevice.dll
+
+
+#end of file
+
+
+standard device names are:
+monitor: this is an emulated monitor
+video_dev: this is a video device(such as vga,ega,svga--whatever)
+fdd_controller: this is the fdd controller(responsible for loading fdd images or drives)
+RTC: real time clock
+FPU: Floating-point unit(cpu to handle decimals)
+none: not a standard device
+usb1.0_controller: this is usb1.0 controller
+usb2.0_controller: this is a usb2.0 controller
+hdd_controller: this is the hdd controller and is responsible for hdd image/drive loading
+ide_primary: this is the primary ide controller
+ide_secondary: this is the secondary ide controller
+cd_controller: this is the cd drive controller and is responsible for cd image/drive loading
+ps_2: this is for ps/2 devices including keyboard and mouse
+com1: this is for com1 port
+com2: see above
+sound: this is for a sound card
+ACPI: this is for power control emulation
+firewire: this is for firewire stuff(I don't know much about it..)
+network: this is for a network device such as ethernet
+PCI: this is for pci controller
+ISA: this is for an isa controller
+MIDI: this is for an MIDI device
+Modem: this is for a modem(either win modem or isa modem or whatever)
+debugger0: this is for a debugger
+debugger1: this is for a second debugger
+lpt: this is the lpt port
+printer: this is for a printer(usually attached to lpt)
+SCSI: this is for an SCSI device
+tape_drive: this is for a tape_drive
+PCMIA: this is for emulation of PCMIA
+
+
+note: their are many internal devices contained in open86's core including DMA,PIC, PIT, ect
+
+
+
+
+--standard functions included in every device--
+////
+(unsigned int)error=Open86Init(GlobalDevice *open86_info,char *given_std_device);
+////
+error should be 0 for success; open86_info will contain a pointer to the GlobalDevice struct
+which has all sorts of stuff in it
+In it the device should completely initialize itself... allocate memory, allocate ports, ect
+
+////
+void Open86End(void);
+////
+this means it's ending...
+
+////
+(unsigned char*)name=GetName(void);
+///
+this just gets the name of the device for cosmetic reasons
+
+////
+(unsigned char *)dev_name=GetDefaultDev(void);
+////
+this gets the name of the default standard device
+if this function is not present then it assumes "none"
+note: this may be used before Open86Init!!
+
+////
+
+
+
+
+
+

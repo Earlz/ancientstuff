@@ -1,0 +1,129 @@
+rem this is a media player
+rem version 1.31
+rem this prog was made by jordan earls
+cll$=cl$()
+goto lclmusic
+starty:
+cls
+print "type 1 to load media/play media"
+print "type 2 to pause music"
+print "type 3 to resume music"
+print "type 4 to reload music"
+print "type 5 to change volume"
+print "type 6 to change speed"
+start:
+sync off
+input st
+if st=1 then goto w
+if st=2 then goto p
+if st=3 then goto r
+if st=4 then goto a
+if st=5 then goto c
+if st=6 then goto f
+print cll$
+goto starty
+a:
+delete music 1
+w:
+if music exist(1) then goto d
+s:
+print "make sure NOT to include file endings"
+print "you can also use a website address (ftp://dom/music)and (http://domain.com/music)"
+print "type the filename/path of the music here(C:\music"
+input path$
+goto file
+s2:
+path$=path$+end$
+a=file exist(path$)
+if a=0 then goto y
+load music path$,1
+play music 1
+loop music 1
+goto starty
+d:
+print "please select 4 to reload music instead"
+goto starty
+p:
+if music paused(1) then goto n
+pause music (1)
+goto starty
+n:
+print "music is already paused"
+goto starty
+r:
+if music playing (1) then goto e
+resume music (1)
+goto starty
+e:
+print "music is already playing"
+goto starty
+c:
+if music exist (1) then goto cf
+print "play some music first"
+goto starty
+cf:
+print "type 1-100 for volume"
+input vol
+set music volume 1,vol
+goto starty
+
+
+f:
+if music exist (1) then  goto fr
+print "play some music first"
+goto starty
+fr:
+print "set the speed 1-200"
+input speed
+set music speed 1,speed
+goto starty
+y:
+print "file don't exist"
+goto starty
+file:
+print "type the file ending here(.mp3)"
+input end$
+if end$=".aif" then goto s2
+if end$=".aifc" then goto s2
+if end$=".aiff" then goto s2
+if end$=".wma" then goto s2
+if end$=".wax" then goto s2
+if end$=".wmv" then goto s2
+if end$=".wvx" then goto s2
+if end$=".cda" then goto s2
+if end$=".avi" then goto s2
+if end$=".wav" then goto s2
+if end$=".mpeg" then goto s2
+if end$=".mpg" then goto s2
+if end$=".mpe" then goto s2
+if end$=".m1v" then goto s2
+if end$=".mp2v" then goto s2
+if end$=".mpv2" then goto s2
+if end$=".mpa" then goto s2
+if end$=".mp3" then goto s2
+if end$=".m3u" then goto s2
+if end$=".mid" then goto s2
+if end$=".midi" then goto s2
+if end$=".rmi" then else goto er1
+
+
+er1:
+print "that is not a supported format"
+print "check readme for a list of supported formats"
+goto s
+lclmusic:
+fe=file exist(cll$)
+if fe$="1" then goto lc else goto starty
+lc:
+
+load music cll$,1
+play music 1
+goto starty
+
+
+
+
+
+
+
+
